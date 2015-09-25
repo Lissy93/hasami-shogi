@@ -1,0 +1,441 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C0E8380D1BB5829A0052651C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E8380C1BB5829A0052651C /* AppDelegate.swift */; };
+		C0E838101BB5829A0052651C /* Hasami_Shogi.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C0E8380E1BB5829A0052651C /* Hasami_Shogi.xcdatamodeld */; };
+		C0E838121BB5829A0052651C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E838111BB5829A0052651C /* ViewController.swift */; };
+		C0E838151BB5829A0052651C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0E838131BB5829A0052651C /* Main.storyboard */; };
+		C0E838171BB5829A0052651C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0E838161BB5829A0052651C /* Images.xcassets */; };
+		C0E8381A1BB5829A0052651C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0E838181BB5829A0052651C /* LaunchScreen.xib */; };
+		C0E838261BB5829A0052651C /* Hasami_ShogiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E838251BB5829A0052651C /* Hasami_ShogiTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C0E838201BB5829A0052651C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C0E837FF1BB5829A0052651C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C0E838061BB5829A0052651C;
+			remoteInfo = "Hasami Shogi";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C0E838071BB5829A0052651C /* Hasami Shogi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hasami Shogi.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C0E8380B1BB5829A0052651C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C0E8380C1BB5829A0052651C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C0E8380F1BB5829A0052651C /* Hasami_Shogi.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Hasami_Shogi.xcdatamodel; sourceTree = "<group>"; };
+		C0E838111BB5829A0052651C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C0E838141BB5829A0052651C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C0E838161BB5829A0052651C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		C0E838191BB5829A0052651C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		C0E8381F1BB5829A0052651C /* Hasami ShogiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Hasami ShogiTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C0E838241BB5829A0052651C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C0E838251BB5829A0052651C /* Hasami_ShogiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hasami_ShogiTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C0E838041BB5829A0052651C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C0E8381C1BB5829A0052651C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C0E837FE1BB5829A0052651C = {
+			isa = PBXGroup;
+			children = (
+				C0E838091BB5829A0052651C /* Hasami Shogi */,
+				C0E838221BB5829A0052651C /* Hasami ShogiTests */,
+				C0E838081BB5829A0052651C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C0E838081BB5829A0052651C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C0E838071BB5829A0052651C /* Hasami Shogi.app */,
+				C0E8381F1BB5829A0052651C /* Hasami ShogiTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C0E838091BB5829A0052651C /* Hasami Shogi */ = {
+			isa = PBXGroup;
+			children = (
+				C0E8380C1BB5829A0052651C /* AppDelegate.swift */,
+				C0E838111BB5829A0052651C /* ViewController.swift */,
+				C0E838131BB5829A0052651C /* Main.storyboard */,
+				C0E838161BB5829A0052651C /* Images.xcassets */,
+				C0E838181BB5829A0052651C /* LaunchScreen.xib */,
+				C0E8380E1BB5829A0052651C /* Hasami_Shogi.xcdatamodeld */,
+				C0E8380A1BB5829A0052651C /* Supporting Files */,
+			);
+			path = "Hasami Shogi";
+			sourceTree = "<group>";
+		};
+		C0E8380A1BB5829A0052651C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C0E8380B1BB5829A0052651C /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C0E838221BB5829A0052651C /* Hasami ShogiTests */ = {
+			isa = PBXGroup;
+			children = (
+				C0E838251BB5829A0052651C /* Hasami_ShogiTests.swift */,
+				C0E838231BB5829A0052651C /* Supporting Files */,
+			);
+			path = "Hasami ShogiTests";
+			sourceTree = "<group>";
+		};
+		C0E838231BB5829A0052651C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C0E838241BB5829A0052651C /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C0E838061BB5829A0052651C /* Hasami Shogi */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C0E838291BB5829A0052651C /* Build configuration list for PBXNativeTarget "Hasami Shogi" */;
+			buildPhases = (
+				C0E838031BB5829A0052651C /* Sources */,
+				C0E838041BB5829A0052651C /* Frameworks */,
+				C0E838051BB5829A0052651C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Hasami Shogi";
+			productName = "Hasami Shogi";
+			productReference = C0E838071BB5829A0052651C /* Hasami Shogi.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C0E8381E1BB5829A0052651C /* Hasami ShogiTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C0E8382C1BB5829A0052651C /* Build configuration list for PBXNativeTarget "Hasami ShogiTests" */;
+			buildPhases = (
+				C0E8381B1BB5829A0052651C /* Sources */,
+				C0E8381C1BB5829A0052651C /* Frameworks */,
+				C0E8381D1BB5829A0052651C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C0E838211BB5829A0052651C /* PBXTargetDependency */,
+			);
+			name = "Hasami ShogiTests";
+			productName = "Hasami ShogiTests";
+			productReference = C0E8381F1BB5829A0052651C /* Hasami ShogiTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C0E837FF1BB5829A0052651C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = "Alicia Sykes";
+				TargetAttributes = {
+					C0E838061BB5829A0052651C = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					C0E8381E1BB5829A0052651C = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = C0E838061BB5829A0052651C;
+					};
+				};
+			};
+			buildConfigurationList = C0E838021BB5829A0052651C /* Build configuration list for PBXProject "Hasami Shogi" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C0E837FE1BB5829A0052651C;
+			productRefGroup = C0E838081BB5829A0052651C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C0E838061BB5829A0052651C /* Hasami Shogi */,
+				C0E8381E1BB5829A0052651C /* Hasami ShogiTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C0E838051BB5829A0052651C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C0E838151BB5829A0052651C /* Main.storyboard in Resources */,
+				C0E8381A1BB5829A0052651C /* LaunchScreen.xib in Resources */,
+				C0E838171BB5829A0052651C /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C0E8381D1BB5829A0052651C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C0E838031BB5829A0052651C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C0E838121BB5829A0052651C /* ViewController.swift in Sources */,
+				C0E8380D1BB5829A0052651C /* AppDelegate.swift in Sources */,
+				C0E838101BB5829A0052651C /* Hasami_Shogi.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C0E8381B1BB5829A0052651C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C0E838261BB5829A0052651C /* Hasami_ShogiTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C0E838211BB5829A0052651C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C0E838061BB5829A0052651C /* Hasami Shogi */;
+			targetProxy = C0E838201BB5829A0052651C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C0E838131BB5829A0052651C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C0E838141BB5829A0052651C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C0E838181BB5829A0052651C /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C0E838191BB5829A0052651C /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C0E838271BB5829A0052651C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C0E838281BB5829A0052651C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C0E8382A1BB5829A0052651C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Hasami Shogi/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		C0E8382B1BB5829A0052651C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Hasami Shogi/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		C0E8382D1BB5829A0052651C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Hasami ShogiTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hasami Shogi.app/Hasami Shogi";
+			};
+			name = Debug;
+		};
+		C0E8382E1BB5829A0052651C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Hasami ShogiTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hasami Shogi.app/Hasami Shogi";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C0E838021BB5829A0052651C /* Build configuration list for PBXProject "Hasami Shogi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C0E838271BB5829A0052651C /* Debug */,
+				C0E838281BB5829A0052651C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C0E838291BB5829A0052651C /* Build configuration list for PBXNativeTarget "Hasami Shogi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C0E8382A1BB5829A0052651C /* Debug */,
+				C0E8382B1BB5829A0052651C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		C0E8382C1BB5829A0052651C /* Build configuration list for PBXNativeTarget "Hasami ShogiTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C0E8382D1BB5829A0052651C /* Debug */,
+				C0E8382E1BB5829A0052651C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C0E8380E1BB5829A0052651C /* Hasami_Shogi.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C0E8380F1BB5829A0052651C /* Hasami_Shogi.xcdatamodel */,
+			);
+			currentVersion = C0E8380F1BB5829A0052651C /* Hasami_Shogi.xcdatamodel */;
+			path = Hasami_Shogi.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = C0E837FF1BB5829A0052651C /* Project object */;
+}

@@ -14,6 +14,18 @@
 		C0E838171BB5829A0052651C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0E838161BB5829A0052651C /* Images.xcassets */; };
 		C0E8381A1BB5829A0052651C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0E838181BB5829A0052651C /* LaunchScreen.xib */; };
 		C0E838261BB5829A0052651C /* Hasami_ShogiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E838251BB5829A0052651C /* Hasami_ShogiTests.swift */; };
+		C0EC8F851BB699040077BAF9 /* game.png in Resources */ = {isa = PBXBuildFile; fileRef = C0EC8F7F1BB699040077BAF9 /* game.png */; settings = {ASSET_TAGS = (); }; };
+		C0EC8F861BB699040077BAF9 /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = C0EC8F801BB699040077BAF9 /* home.png */; settings = {ASSET_TAGS = (); }; };
+		C0EC8F871BB699040077BAF9 /* home63.png in Resources */ = {isa = PBXBuildFile; fileRef = C0EC8F811BB699040077BAF9 /* home63.png */; settings = {ASSET_TAGS = (); }; };
+		C0EC8F881BB699040077BAF9 /* league.png in Resources */ = {isa = PBXBuildFile; fileRef = C0EC8F821BB699040077BAF9 /* league.png */; settings = {ASSET_TAGS = (); }; };
+		C0EC8F891BB699040077BAF9 /* players.png in Resources */ = {isa = PBXBuildFile; fileRef = C0EC8F831BB699040077BAF9 /* players.png */; settings = {ASSET_TAGS = (); }; };
+		C0EC8F8A1BB699040077BAF9 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = C0EC8F841BB699040077BAF9 /* settings.png */; settings = {ASSET_TAGS = (); }; };
+		C0EC8F911BB699040077BAF9 /* game.png in Resources */ = {isa = PBXBuildFile; fileRef = C0EC8F8B1BB699040077BAF9 /* game.png */; settings = {ASSET_TAGS = (); }; };
+		C0EC8F921BB699040077BAF9 /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = C0EC8F8C1BB699040077BAF9 /* home.png */; settings = {ASSET_TAGS = (); }; };
+		C0EC8F931BB699040077BAF9 /* home63.png in Resources */ = {isa = PBXBuildFile; fileRef = C0EC8F8D1BB699040077BAF9 /* home63.png */; settings = {ASSET_TAGS = (); }; };
+		C0EC8F941BB699040077BAF9 /* league.png in Resources */ = {isa = PBXBuildFile; fileRef = C0EC8F8E1BB699040077BAF9 /* league.png */; settings = {ASSET_TAGS = (); }; };
+		C0EC8F951BB699040077BAF9 /* players.png in Resources */ = {isa = PBXBuildFile; fileRef = C0EC8F8F1BB699040077BAF9 /* players.png */; settings = {ASSET_TAGS = (); }; };
+		C0EC8F961BB699040077BAF9 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = C0EC8F901BB699040077BAF9 /* settings.png */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +50,18 @@
 		C0E8381F1BB5829A0052651C /* Hasami ShogiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Hasami ShogiTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0E838241BB5829A0052651C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C0E838251BB5829A0052651C /* Hasami_ShogiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hasami_ShogiTests.swift; sourceTree = "<group>"; };
+		C0EC8F7F1BB699040077BAF9 /* game.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = game.png; path = Assets/game.png; sourceTree = "<group>"; };
+		C0EC8F801BB699040077BAF9 /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = home.png; path = Assets/home.png; sourceTree = "<group>"; };
+		C0EC8F811BB699040077BAF9 /* home63.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = home63.png; path = Assets/home63.png; sourceTree = "<group>"; };
+		C0EC8F821BB699040077BAF9 /* league.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = league.png; path = Assets/league.png; sourceTree = "<group>"; };
+		C0EC8F831BB699040077BAF9 /* players.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = players.png; path = Assets/players.png; sourceTree = "<group>"; };
+		C0EC8F841BB699040077BAF9 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = settings.png; path = Assets/settings.png; sourceTree = "<group>"; };
+		C0EC8F8B1BB699040077BAF9 /* game.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = game.png; path = Assets/game.png; sourceTree = "<group>"; };
+		C0EC8F8C1BB699040077BAF9 /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = home.png; path = Assets/home.png; sourceTree = "<group>"; };
+		C0EC8F8D1BB699040077BAF9 /* home63.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = home63.png; path = Assets/home63.png; sourceTree = "<group>"; };
+		C0EC8F8E1BB699040077BAF9 /* league.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = league.png; path = Assets/league.png; sourceTree = "<group>"; };
+		C0EC8F8F1BB699040077BAF9 /* players.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = players.png; path = Assets/players.png; sourceTree = "<group>"; };
+		C0EC8F901BB699040077BAF9 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = settings.png; path = Assets/settings.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +85,7 @@
 		C0E837FE1BB5829A0052651C = {
 			isa = PBXGroup;
 			children = (
+				C0EC8F6A1BB692B90077BAF9 /* Images */,
 				C0E838091BB5829A0052651C /* Hasami Shogi */,
 				C0E838221BB5829A0052651C /* Hasami ShogiTests */,
 				C0E838081BB5829A0052651C /* Products */,
@@ -115,6 +140,25 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		C0EC8F6A1BB692B90077BAF9 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				C0EC8F8B1BB699040077BAF9 /* game.png */,
+				C0EC8F8C1BB699040077BAF9 /* home.png */,
+				C0EC8F8D1BB699040077BAF9 /* home63.png */,
+				C0EC8F8E1BB699040077BAF9 /* league.png */,
+				C0EC8F8F1BB699040077BAF9 /* players.png */,
+				C0EC8F901BB699040077BAF9 /* settings.png */,
+				C0EC8F7F1BB699040077BAF9 /* game.png */,
+				C0EC8F801BB699040077BAF9 /* home.png */,
+				C0EC8F811BB699040077BAF9 /* home63.png */,
+				C0EC8F821BB699040077BAF9 /* league.png */,
+				C0EC8F831BB699040077BAF9 /* players.png */,
+				C0EC8F841BB699040077BAF9 /* settings.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -159,6 +203,8 @@
 		C0E837FF1BB5829A0052651C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = "Alicia Sykes";
 				TargetAttributes = {
@@ -195,8 +241,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0EC8F881BB699040077BAF9 /* league.png in Resources */,
+				C0EC8F911BB699040077BAF9 /* game.png in Resources */,
+				C0EC8F921BB699040077BAF9 /* home.png in Resources */,
 				C0E838151BB5829A0052651C /* Main.storyboard in Resources */,
+				C0EC8F871BB699040077BAF9 /* home63.png in Resources */,
+				C0EC8F861BB699040077BAF9 /* home.png in Resources */,
+				C0EC8F961BB699040077BAF9 /* settings.png in Resources */,
+				C0EC8F951BB699040077BAF9 /* players.png in Resources */,
+				C0EC8F851BB699040077BAF9 /* game.png in Resources */,
+				C0EC8F931BB699040077BAF9 /* home63.png in Resources */,
+				C0EC8F941BB699040077BAF9 /* league.png in Resources */,
 				C0E8381A1BB5829A0052651C /* LaunchScreen.xib in Resources */,
+				C0EC8F8A1BB699040077BAF9 /* settings.png in Resources */,
+				C0EC8F891BB699040077BAF9 /* players.png in Resources */,
 				C0E838171BB5829A0052651C /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -413,6 +471,7 @@
 				C0E8382B1BB5829A0052651C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C0E8382C1BB5829A0052651C /* Build configuration list for PBXNativeTarget "Hasami ShogiTests" */ = {
 			isa = XCConfigurationList;
@@ -421,6 +480,7 @@
 				C0E8382E1BB5829A0052651C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

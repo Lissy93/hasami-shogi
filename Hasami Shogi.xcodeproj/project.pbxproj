@@ -26,6 +26,7 @@
 		C0EC8F941BB699040077BAF9 /* league.png in Resources */ = {isa = PBXBuildFile; fileRef = C0EC8F8E1BB699040077BAF9 /* league.png */; settings = {ASSET_TAGS = (); }; };
 		C0EC8F951BB699040077BAF9 /* players.png in Resources */ = {isa = PBXBuildFile; fileRef = C0EC8F8F1BB699040077BAF9 /* players.png */; settings = {ASSET_TAGS = (); }; };
 		C0EC8F961BB699040077BAF9 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = C0EC8F901BB699040077BAF9 /* settings.png */; settings = {ASSET_TAGS = (); }; };
+		C0EC8F981BB6CACE0077BAF9 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EC8F971BB6CACE0077BAF9 /* GameViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		C0EC8F8E1BB699040077BAF9 /* league.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = league.png; path = Assets/league.png; sourceTree = "<group>"; };
 		C0EC8F8F1BB699040077BAF9 /* players.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = players.png; path = Assets/players.png; sourceTree = "<group>"; };
 		C0EC8F901BB699040077BAF9 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = settings.png; path = Assets/settings.png; sourceTree = "<group>"; };
+		C0EC8F971BB6CACE0077BAF9 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 				C0E838181BB5829A0052651C /* LaunchScreen.xib */,
 				C0E8380E1BB5829A0052651C /* Hasami_Shogi.xcdatamodeld */,
 				C0E8380A1BB5829A0052651C /* Supporting Files */,
+				C0EC8F971BB6CACE0077BAF9 /* GameViewController.swift */,
 			);
 			path = "Hasami Shogi";
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0EC8F981BB6CACE0077BAF9 /* GameViewController.swift in Sources */,
 				C0E838121BB5829A0052651C /* ViewController.swift in Sources */,
 				C0E8380D1BB5829A0052651C /* AppDelegate.swift in Sources */,
 				C0E838101BB5829A0052651C /* Hasami_Shogi.xcdatamodeld in Sources */,

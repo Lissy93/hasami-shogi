@@ -38,4 +38,5 @@ xcuserdata
 # Carthage/Checkouts
 
 Carthage/Build
-	
+
+.idea

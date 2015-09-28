@@ -63,7 +63,6 @@ class GameViewController: UIViewController, UICollectionViewDelegateFlowLayout, 
     }
     
     
-    
     func buttonPressed(sender: UIButton!) {
         let alertView = UIAlertView();
         alertView.addButtonWithTitle("Done");

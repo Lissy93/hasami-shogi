@@ -8,24 +8,69 @@
 
 import UIKit
 
-class GameViewController: UICollectionViewController {
+class GameViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+
+    var collectionView: UICollectionView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        layout.sectionInset = UIEdgeInsets(top: 1, left: 1, bottom: 1, right: 1)
+        layout.itemSize = CGSize(width: 30, height: 30)
         
-        for _ in 1...5 { // putting this in a loop, so MS Sam can read it 5 times when it's printed to console
-            print("omg something which doesn't yet do anything is vagualey slightly working!!");
-        }
+        collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        collectionView.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
+        collectionView.backgroundColor = UIColor.whiteColor()
+        self.view.addSubview(collectionView)
     }
+    
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 80
+    }
+    
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath)
+        cell.backgroundColor = UIColor.orangeColor()
+        return cell
+    }
+    
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        
+        
+    }
+    
+    func setUpGrid () {
+        let grid = UICollectionView();
+        grid
     }
     
     
+    func createButton () {
+        let button = UIButton();
+        button.setTitle("Add", forState: .Normal)
+        button.setTitleColor(UIColor.blueColor(), forState: .Normal)
+        button.frame = CGRectMake(200, 65, 46, 30) // X, Y, width, height
+        button.addTarget(self, action: "buttonPressed:", forControlEvents: .TouchUpInside)
+        self.view.addSubview(button)
+    }
+    
+    
+    
+    func buttonPressed(sender: UIButton!) {
+        let alertView = UIAlertView();
+        alertView.addButtonWithTitle("Done");
+        alertView.title = "Alert!";
+        alertView.message = "Button Pressed!!!";
+        alertView.show();
+    }
     
 }
 

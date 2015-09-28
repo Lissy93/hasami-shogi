@@ -39,12 +39,8 @@ class GameViewController: UIViewController, UICollectionViewDelegateFlowLayout, 
     }
     
     
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        
-        
-        
     }
     
     func setUpGrid () {

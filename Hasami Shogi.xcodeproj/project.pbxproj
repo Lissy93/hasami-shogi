@@ -10,7 +10,6 @@
 		C0E8380D1BB5829A0052651C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E8380C1BB5829A0052651C /* AppDelegate.swift */; };
 		C0E838101BB5829A0052651C /* Hasami_Shogi.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C0E8380E1BB5829A0052651C /* Hasami_Shogi.xcdatamodeld */; };
 		C0E838121BB5829A0052651C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E838111BB5829A0052651C /* ViewController.swift */; };
-		C0E838151BB5829A0052651C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0E838131BB5829A0052651C /* Main.storyboard */; };
 		C0E838171BB5829A0052651C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0E838161BB5829A0052651C /* Images.xcassets */; };
 		C0E8381A1BB5829A0052651C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0E838181BB5829A0052651C /* LaunchScreen.xib */; };
 		C0E838261BB5829A0052651C /* Hasami_ShogiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E838251BB5829A0052651C /* Hasami_ShogiTests.swift */; };
@@ -45,7 +44,6 @@
 		C0E8380C1BB5829A0052651C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C0E8380F1BB5829A0052651C /* Hasami_Shogi.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Hasami_Shogi.xcdatamodel; sourceTree = "<group>"; };
 		C0E838111BB5829A0052651C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		C0E838141BB5829A0052651C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C0E838161BB5829A0052651C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C0E838191BB5829A0052651C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		C0E8381F1BB5829A0052651C /* Hasami ShogiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Hasami ShogiTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -109,7 +107,6 @@
 				C0EC8F971BB6CACE0077BAF9 /* GameViewController.swift */,
 				C0E8380C1BB5829A0052651C /* AppDelegate.swift */,
 				C0E838111BB5829A0052651C /* ViewController.swift */,
-				C0E838131BB5829A0052651C /* Main.storyboard */,
 				C0E838161BB5829A0052651C /* Images.xcassets */,
 				C0E838181BB5829A0052651C /* LaunchScreen.xib */,
 				C0E8380E1BB5829A0052651C /* Hasami_Shogi.xcdatamodeld */,
@@ -247,7 +244,6 @@
 				C0EC8F881BB699040077BAF9 /* league.png in Resources */,
 				C0EC8F911BB699040077BAF9 /* game.png in Resources */,
 				C0EC8F921BB699040077BAF9 /* home.png in Resources */,
-				C0E838151BB5829A0052651C /* Main.storyboard in Resources */,
 				C0EC8F871BB699040077BAF9 /* home63.png in Resources */,
 				C0EC8F861BB699040077BAF9 /* home.png in Resources */,
 				C0EC8F961BB699040077BAF9 /* settings.png in Resources */,
@@ -302,14 +298,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		C0E838131BB5829A0052651C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C0E838141BB5829A0052651C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		C0E838181BB5829A0052651C /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (

@@ -16,10 +16,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject : AnyObject]?) -> Bool {
-        window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        window!.backgroundColor = UIColor.redColor()
-        window!.rootViewController = GameViewController() // Change this back to MainController soon
-        window!.makeKeyAndVisible()
+//        window = UIWindow(frame: UIScreen.mainScreen().bounds)
+//        window!.backgroundColor = UIColor.redColor()
+//        window!.rootViewController = GameViewController() // Change this back to MainController soon
+//        window!.makeKeyAndVisible()
         
         return true
     }

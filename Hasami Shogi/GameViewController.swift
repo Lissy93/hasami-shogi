@@ -16,9 +16,11 @@ class GameViewController: UIViewController, UICollectionViewDelegateFlowLayout, 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print("DID LOAD");
+        
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 1, left: 1, bottom: 1, right: 1)
-        layout.itemSize = CGSize(width: 30, height: 30)
+        layout.itemSize = CGSize(width: 26, height: 26)
         
         collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
         collectionView.dataSource = self
@@ -30,11 +32,10 @@ class GameViewController: UIViewController, UICollectionViewDelegateFlowLayout, 
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 80
+        return 81
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        print("WAAAT - Hasami Shogi is now complete");
         print(indexPath);
         if let cell = collectionView.cellForItemAtIndexPath(indexPath) {
             cell.backgroundColor = UIColor.greenColor()
@@ -50,12 +51,6 @@ class GameViewController: UIViewController, UICollectionViewDelegateFlowLayout, 
         cell.targetForAction("getAction:", withSender: self)
         return cell
     }
-    
-    func getAction(sender:UITableViewCell)->Void {
-        if(sender.tag == 0) {
-            print("it worked") // this will never be called, because nothing never works, BECAUSE SWIFT IS STUPID
-        }
-    }
 
     
     
@@ -70,4 +65,8 @@ class GameViewController: UIViewController, UICollectionViewDelegateFlowLayout, 
 
     
 }
+
+
+class GameCell {}
+
 

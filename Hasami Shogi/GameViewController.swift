@@ -12,11 +12,12 @@ class GameViewController: UIViewController, UICollectionViewDelegateFlowLayout, 
     
     var collectionView: UICollectionView!
     
+    var player1 = Player(playerNum: PlayerNum.player1, playerName: "Alicia", moves: 0, piecePositions: [0,1,2,3,4,5,6,7,8])
+    var player2 = Player(playerNum: PlayerNum.player2, playerName: "Ollie", moves: 0, piecePositions: [72, 73, 74, 75, 76, 77, 78, 79, 80])
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        print("DID LOAD");
         
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 1, left: 1, bottom: 1, right: 1)
@@ -36,19 +37,28 @@ class GameViewController: UIViewController, UICollectionViewDelegateFlowLayout, 
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        print(indexPath);
         if let cell = collectionView.cellForItemAtIndexPath(indexPath) {
-            cell.backgroundColor = UIColor.greenColor()
-            print(cell.textInputContextIdentifier )
+           placePiece(cell, player: player1.playerNum)
         } else {
             // Error indexPath is not on screen: this should never happen.
         }
+    }
+    
+    func placePiece(cell: UICollectionViewCell, player: PlayerNum){
+        cell.backgroundColor = (player == PlayerNum.player1) ? UIColor.greenColor() : UIColor.blueColor()
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath)
         cell.backgroundColor = UIColor.orangeColor()
         cell.targetForAction("getAction:", withSender: self)
+        if player1.piecePositions.contains(indexPath.item){
+            placePiece(cell, player: player1.playerNum)
+        }
+        else if player2.piecePositions.contains(indexPath.item){
+            placePiece(cell, player: player2.playerNum)
+        }
+        
         return cell
     }
 
@@ -66,7 +76,28 @@ class GameViewController: UIViewController, UICollectionViewDelegateFlowLayout, 
     
 }
 
+struct Player {
+    var playerNum: PlayerNum
+    var playerName: String
+    var moves: Int
+    var piecePositions: [Int]
+    
+    mutating func makeMove(from: Int, to: Int){
+        // Remove old piece position
+        if let index = piecePositions.indexOf(from){
+            piecePositions.removeAtIndex(index)
+        }
+        
+        // Add in new piece position
+        piecePositions.append(to)
+        
+        moves++
+    }
+    
+}
 
-class GameCell {}
-
+enum PlayerNum {
+    case player1
+    case player2
+}
 

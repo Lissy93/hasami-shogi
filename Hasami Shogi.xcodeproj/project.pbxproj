@@ -7,24 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C06C7CB51BC1790F0043E18F /* game.png in Resources */ = {isa = PBXBuildFile; fileRef = C06C7CAF1BC1790F0043E18F /* game.png */; settings = {ASSET_TAGS = (); }; };
+		C06C7CB61BC1790F0043E18F /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = C06C7CB01BC1790F0043E18F /* home.png */; settings = {ASSET_TAGS = (); }; };
+		C06C7CB71BC1790F0043E18F /* home63.png in Resources */ = {isa = PBXBuildFile; fileRef = C06C7CB11BC1790F0043E18F /* home63.png */; settings = {ASSET_TAGS = (); }; };
+		C06C7CB81BC1790F0043E18F /* league.png in Resources */ = {isa = PBXBuildFile; fileRef = C06C7CB21BC1790F0043E18F /* league.png */; settings = {ASSET_TAGS = (); }; };
+		C06C7CB91BC1790F0043E18F /* players.png in Resources */ = {isa = PBXBuildFile; fileRef = C06C7CB31BC1790F0043E18F /* players.png */; settings = {ASSET_TAGS = (); }; };
+		C06C7CBA1BC1790F0043E18F /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = C06C7CB41BC1790F0043E18F /* settings.png */; settings = {ASSET_TAGS = (); }; };
 		C0E8380D1BB5829A0052651C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E8380C1BB5829A0052651C /* AppDelegate.swift */; };
 		C0E838101BB5829A0052651C /* Hasami_Shogi.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C0E8380E1BB5829A0052651C /* Hasami_Shogi.xcdatamodeld */; };
 		C0E838121BB5829A0052651C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E838111BB5829A0052651C /* ViewController.swift */; };
 		C0E838171BB5829A0052651C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0E838161BB5829A0052651C /* Images.xcassets */; };
 		C0E8381A1BB5829A0052651C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0E838181BB5829A0052651C /* LaunchScreen.xib */; };
 		C0E838261BB5829A0052651C /* Hasami_ShogiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E838251BB5829A0052651C /* Hasami_ShogiTests.swift */; };
-		C0EC8F851BB699040077BAF9 /* game.png in Resources */ = {isa = PBXBuildFile; fileRef = C0EC8F7F1BB699040077BAF9 /* game.png */; settings = {ASSET_TAGS = (); }; };
-		C0EC8F861BB699040077BAF9 /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = C0EC8F801BB699040077BAF9 /* home.png */; settings = {ASSET_TAGS = (); }; };
-		C0EC8F871BB699040077BAF9 /* home63.png in Resources */ = {isa = PBXBuildFile; fileRef = C0EC8F811BB699040077BAF9 /* home63.png */; settings = {ASSET_TAGS = (); }; };
-		C0EC8F881BB699040077BAF9 /* league.png in Resources */ = {isa = PBXBuildFile; fileRef = C0EC8F821BB699040077BAF9 /* league.png */; settings = {ASSET_TAGS = (); }; };
-		C0EC8F891BB699040077BAF9 /* players.png in Resources */ = {isa = PBXBuildFile; fileRef = C0EC8F831BB699040077BAF9 /* players.png */; settings = {ASSET_TAGS = (); }; };
-		C0EC8F8A1BB699040077BAF9 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = C0EC8F841BB699040077BAF9 /* settings.png */; settings = {ASSET_TAGS = (); }; };
-		C0EC8F911BB699040077BAF9 /* game.png in Resources */ = {isa = PBXBuildFile; fileRef = C0EC8F8B1BB699040077BAF9 /* game.png */; settings = {ASSET_TAGS = (); }; };
-		C0EC8F921BB699040077BAF9 /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = C0EC8F8C1BB699040077BAF9 /* home.png */; settings = {ASSET_TAGS = (); }; };
-		C0EC8F931BB699040077BAF9 /* home63.png in Resources */ = {isa = PBXBuildFile; fileRef = C0EC8F8D1BB699040077BAF9 /* home63.png */; settings = {ASSET_TAGS = (); }; };
-		C0EC8F941BB699040077BAF9 /* league.png in Resources */ = {isa = PBXBuildFile; fileRef = C0EC8F8E1BB699040077BAF9 /* league.png */; settings = {ASSET_TAGS = (); }; };
-		C0EC8F951BB699040077BAF9 /* players.png in Resources */ = {isa = PBXBuildFile; fileRef = C0EC8F8F1BB699040077BAF9 /* players.png */; settings = {ASSET_TAGS = (); }; };
-		C0EC8F961BB699040077BAF9 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = C0EC8F901BB699040077BAF9 /* settings.png */; settings = {ASSET_TAGS = (); }; };
 		C0EC8F981BB6CACE0077BAF9 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EC8F971BB6CACE0077BAF9 /* GameViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		C0F8E8FC1BBAC6B000A0D2ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0F8E8FA1BBAC6B000A0D2ED /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
 		C0F8E8FE1BBAD89500A0D2ED /* PlayersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F8E8FD1BBAD89500A0D2ED /* PlayersViewController.swift */; settings = {ASSET_TAGS = (); }; };
@@ -41,31 +35,25 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C06C7CAF1BC1790F0043E18F /* game.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = game.png; path = "Hasami Shogi/Assets/game.png"; sourceTree = "<group>"; };
+		C06C7CB01BC1790F0043E18F /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = home.png; path = "Hasami Shogi/Assets/home.png"; sourceTree = "<group>"; };
+		C06C7CB11BC1790F0043E18F /* home63.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = home63.png; path = "Hasami Shogi/Assets/home63.png"; sourceTree = "<group>"; };
+		C06C7CB21BC1790F0043E18F /* league.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = league.png; path = "Hasami Shogi/Assets/league.png"; sourceTree = "<group>"; };
+		C06C7CB31BC1790F0043E18F /* players.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = players.png; path = "Hasami Shogi/Assets/players.png"; sourceTree = "<group>"; };
+		C06C7CB41BC1790F0043E18F /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = settings.png; path = "Hasami Shogi/Assets/settings.png"; sourceTree = "<group>"; };
 		C0E838071BB5829A0052651C /* Hasami Shogi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hasami Shogi.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0E8380B1BB5829A0052651C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C0E8380C1BB5829A0052651C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C0E8380C1BB5829A0052651C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Helpers/AppDelegate.swift; sourceTree = "<group>"; };
 		C0E8380F1BB5829A0052651C /* Hasami_Shogi.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Hasami_Shogi.xcdatamodel; sourceTree = "<group>"; };
-		C0E838111BB5829A0052651C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C0E838111BB5829A0052651C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = Controllers/ViewController.swift; sourceTree = "<group>"; };
 		C0E838161BB5829A0052651C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C0E838191BB5829A0052651C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		C0E8381F1BB5829A0052651C /* Hasami ShogiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Hasami ShogiTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0E838241BB5829A0052651C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C0E838251BB5829A0052651C /* Hasami_ShogiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hasami_ShogiTests.swift; sourceTree = "<group>"; };
-		C0EC8F7F1BB699040077BAF9 /* game.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = game.png; path = Assets/game.png; sourceTree = "<group>"; };
-		C0EC8F801BB699040077BAF9 /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = home.png; path = Assets/home.png; sourceTree = "<group>"; };
-		C0EC8F811BB699040077BAF9 /* home63.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = home63.png; path = Assets/home63.png; sourceTree = "<group>"; };
-		C0EC8F821BB699040077BAF9 /* league.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = league.png; path = Assets/league.png; sourceTree = "<group>"; };
-		C0EC8F831BB699040077BAF9 /* players.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = players.png; path = Assets/players.png; sourceTree = "<group>"; };
-		C0EC8F841BB699040077BAF9 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = settings.png; path = Assets/settings.png; sourceTree = "<group>"; };
-		C0EC8F8B1BB699040077BAF9 /* game.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = game.png; path = Assets/game.png; sourceTree = "<group>"; };
-		C0EC8F8C1BB699040077BAF9 /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = home.png; path = Assets/home.png; sourceTree = "<group>"; };
-		C0EC8F8D1BB699040077BAF9 /* home63.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = home63.png; path = Assets/home63.png; sourceTree = "<group>"; };
-		C0EC8F8E1BB699040077BAF9 /* league.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = league.png; path = Assets/league.png; sourceTree = "<group>"; };
-		C0EC8F8F1BB699040077BAF9 /* players.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = players.png; path = Assets/players.png; sourceTree = "<group>"; };
-		C0EC8F901BB699040077BAF9 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = settings.png; path = Assets/settings.png; sourceTree = "<group>"; };
-		C0EC8F971BB6CACE0077BAF9 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		C0EC8F971BB6CACE0077BAF9 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameViewController.swift; path = Controllers/GameViewController.swift; sourceTree = "<group>"; };
 		C0F8E8FB1BBAC6B000A0D2ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		C0F8E8FD1BBAD89500A0D2ED /* PlayersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayersViewController.swift; sourceTree = "<group>"; };
+		C0F8E8FD1BBAD89500A0D2ED /* PlayersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlayersViewController.swift; path = Controllers/PlayersViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +74,45 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C06C7CBB1BC17A980043E18F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		C06C7CBC1BC17AA00043E18F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		C06C7CBD1BC17AA70043E18F /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C0E838111BB5829A0052651C /* ViewController.swift */,
+				C0F8E8FD1BBAD89500A0D2ED /* PlayersViewController.swift */,
+				C0EC8F971BB6CACE0077BAF9 /* GameViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		C06C7CBE1BC17AB40043E18F /* Stores */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Stores;
+			sourceTree = "<group>";
+		};
+		C06C7CBF1BC17ABC0043E18F /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				C0E8380C1BB5829A0052651C /* AppDelegate.swift */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
 		C0E837FE1BB5829A0052651C = {
 			isa = PBXGroup;
 			children = (
@@ -108,15 +135,17 @@
 		C0E838091BB5829A0052651C /* Hasami Shogi */ = {
 			isa = PBXGroup;
 			children = (
+				C0E8380B1BB5829A0052651C /* Info.plist */,
+				C06C7CBF1BC17ABC0043E18F /* Helpers */,
+				C06C7CBE1BC17AB40043E18F /* Stores */,
+				C06C7CBD1BC17AA70043E18F /* Controllers */,
+				C06C7CBC1BC17AA00043E18F /* Views */,
+				C06C7CBB1BC17A980043E18F /* Models */,
 				C0F8E8FA1BBAC6B000A0D2ED /* Main.storyboard */,
-				C0EC8F971BB6CACE0077BAF9 /* GameViewController.swift */,
-				C0E8380C1BB5829A0052651C /* AppDelegate.swift */,
-				C0E838111BB5829A0052651C /* ViewController.swift */,
 				C0E838161BB5829A0052651C /* Images.xcassets */,
 				C0E838181BB5829A0052651C /* LaunchScreen.xib */,
 				C0E8380E1BB5829A0052651C /* Hasami_Shogi.xcdatamodeld */,
 				C0E8380A1BB5829A0052651C /* Supporting Files */,
-				C0F8E8FD1BBAD89500A0D2ED /* PlayersViewController.swift */,
 			);
 			path = "Hasami Shogi";
 			sourceTree = "<group>";
@@ -124,7 +153,6 @@
 		C0E8380A1BB5829A0052651C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				C0E8380B1BB5829A0052651C /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -149,18 +177,12 @@
 		C0EC8F6A1BB692B90077BAF9 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				C0EC8F8B1BB699040077BAF9 /* game.png */,
-				C0EC8F8C1BB699040077BAF9 /* home.png */,
-				C0EC8F8D1BB699040077BAF9 /* home63.png */,
-				C0EC8F8E1BB699040077BAF9 /* league.png */,
-				C0EC8F8F1BB699040077BAF9 /* players.png */,
-				C0EC8F901BB699040077BAF9 /* settings.png */,
-				C0EC8F7F1BB699040077BAF9 /* game.png */,
-				C0EC8F801BB699040077BAF9 /* home.png */,
-				C0EC8F811BB699040077BAF9 /* home63.png */,
-				C0EC8F821BB699040077BAF9 /* league.png */,
-				C0EC8F831BB699040077BAF9 /* players.png */,
-				C0EC8F841BB699040077BAF9 /* settings.png */,
+				C06C7CAF1BC1790F0043E18F /* game.png */,
+				C06C7CB01BC1790F0043E18F /* home.png */,
+				C06C7CB11BC1790F0043E18F /* home63.png */,
+				C06C7CB21BC1790F0043E18F /* league.png */,
+				C06C7CB31BC1790F0043E18F /* players.png */,
+				C06C7CB41BC1790F0043E18F /* settings.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -247,21 +269,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C0EC8F881BB699040077BAF9 /* league.png in Resources */,
-				C0EC8F911BB699040077BAF9 /* game.png in Resources */,
-				C0EC8F921BB699040077BAF9 /* home.png in Resources */,
-				C0EC8F871BB699040077BAF9 /* home63.png in Resources */,
-				C0EC8F861BB699040077BAF9 /* home.png in Resources */,
-				C0EC8F961BB699040077BAF9 /* settings.png in Resources */,
+				C06C7CB91BC1790F0043E18F /* players.png in Resources */,
+				C06C7CB51BC1790F0043E18F /* game.png in Resources */,
+				C06C7CB61BC1790F0043E18F /* home.png in Resources */,
+				C06C7CB71BC1790F0043E18F /* home63.png in Resources */,
 				C0F8E8FC1BBAC6B000A0D2ED /* Main.storyboard in Resources */,
-				C0EC8F951BB699040077BAF9 /* players.png in Resources */,
-				C0EC8F851BB699040077BAF9 /* game.png in Resources */,
-				C0EC8F931BB699040077BAF9 /* home63.png in Resources */,
-				C0EC8F941BB699040077BAF9 /* league.png in Resources */,
+				C06C7CBA1BC1790F0043E18F /* settings.png in Resources */,
 				C0E8381A1BB5829A0052651C /* LaunchScreen.xib in Resources */,
-				C0EC8F8A1BB699040077BAF9 /* settings.png in Resources */,
-				C0EC8F891BB699040077BAF9 /* players.png in Resources */,
 				C0E838171BB5829A0052651C /* Images.xcassets in Resources */,
+				C06C7CB81BC1790F0043E18F /* league.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

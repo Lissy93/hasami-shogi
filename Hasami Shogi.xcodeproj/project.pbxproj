@@ -7,12 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C04637CC1BC3A9430036D28A /* cell_marker.png in Resources */ = {isa = PBXBuildFile; fileRef = C04637CB1BC3A9430036D28A /* cell_marker.png */; settings = {ASSET_TAGS = (); }; };
 		C06C7CB51BC1790F0043E18F /* game.png in Resources */ = {isa = PBXBuildFile; fileRef = C06C7CAF1BC1790F0043E18F /* game.png */; settings = {ASSET_TAGS = (); }; };
 		C06C7CB61BC1790F0043E18F /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = C06C7CB01BC1790F0043E18F /* home.png */; settings = {ASSET_TAGS = (); }; };
 		C06C7CB71BC1790F0043E18F /* home63.png in Resources */ = {isa = PBXBuildFile; fileRef = C06C7CB11BC1790F0043E18F /* home63.png */; settings = {ASSET_TAGS = (); }; };
 		C06C7CB81BC1790F0043E18F /* league.png in Resources */ = {isa = PBXBuildFile; fileRef = C06C7CB21BC1790F0043E18F /* league.png */; settings = {ASSET_TAGS = (); }; };
 		C06C7CB91BC1790F0043E18F /* players.png in Resources */ = {isa = PBXBuildFile; fileRef = C06C7CB31BC1790F0043E18F /* players.png */; settings = {ASSET_TAGS = (); }; };
 		C06C7CBA1BC1790F0043E18F /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = C06C7CB41BC1790F0043E18F /* settings.png */; settings = {ASSET_TAGS = (); }; };
+		C06C7CCF1BC1AA0D0043E18F /* black_checker.png in Resources */ = {isa = PBXBuildFile; fileRef = C06C7CCD1BC1AA0D0043E18F /* black_checker.png */; settings = {ASSET_TAGS = (); }; };
+		C06C7CD01BC1AA0D0043E18F /* white_checker.png in Resources */ = {isa = PBXBuildFile; fileRef = C06C7CCE1BC1AA0D0043E18F /* white_checker.png */; settings = {ASSET_TAGS = (); }; };
+		C06C7CD21BC1B2220043E18F /* GenerateGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06C7CD11BC1B2220043E18F /* GenerateGameView.swift */; settings = {ASSET_TAGS = (); }; };
+		C06C7CD41BC1B3690043E18F /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06C7CD31BC1B3690043E18F /* Player.swift */; settings = {ASSET_TAGS = (); }; };
+		C06C7CD61BC1C2BB0043E18F /* GameLogicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06C7CD51BC1C2BB0043E18F /* GameLogicController.swift */; settings = {ASSET_TAGS = (); }; };
+		C06C7CD91BC1CB5A0043E18F /* GameStatusController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06C7CD81BC1CB5A0043E18F /* GameStatusController.swift */; settings = {ASSET_TAGS = (); }; };
 		C0E8380D1BB5829A0052651C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E8380C1BB5829A0052651C /* AppDelegate.swift */; };
 		C0E838101BB5829A0052651C /* Hasami_Shogi.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C0E8380E1BB5829A0052651C /* Hasami_Shogi.xcdatamodeld */; };
 		C0E838121BB5829A0052651C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E838111BB5829A0052651C /* ViewController.swift */; };
@@ -35,12 +42,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C04637CB1BC3A9430036D28A /* cell_marker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cell_marker.png; path = "Hasami Shogi/Assets/cell_marker.png"; sourceTree = "<group>"; };
 		C06C7CAF1BC1790F0043E18F /* game.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = game.png; path = "Hasami Shogi/Assets/game.png"; sourceTree = "<group>"; };
 		C06C7CB01BC1790F0043E18F /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = home.png; path = "Hasami Shogi/Assets/home.png"; sourceTree = "<group>"; };
 		C06C7CB11BC1790F0043E18F /* home63.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = home63.png; path = "Hasami Shogi/Assets/home63.png"; sourceTree = "<group>"; };
 		C06C7CB21BC1790F0043E18F /* league.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = league.png; path = "Hasami Shogi/Assets/league.png"; sourceTree = "<group>"; };
 		C06C7CB31BC1790F0043E18F /* players.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = players.png; path = "Hasami Shogi/Assets/players.png"; sourceTree = "<group>"; };
 		C06C7CB41BC1790F0043E18F /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = settings.png; path = "Hasami Shogi/Assets/settings.png"; sourceTree = "<group>"; };
+		C06C7CCD1BC1AA0D0043E18F /* black_checker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = black_checker.png; path = "Hasami Shogi/Assets/black_checker.png"; sourceTree = "<group>"; };
+		C06C7CCE1BC1AA0D0043E18F /* white_checker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = white_checker.png; path = "Hasami Shogi/Assets/white_checker.png"; sourceTree = "<group>"; };
+		C06C7CD11BC1B2220043E18F /* GenerateGameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GenerateGameView.swift; path = Controllers/Game/GenerateGameView.swift; sourceTree = "<group>"; };
+		C06C7CD31BC1B3690043E18F /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Player.swift; path = Models/Player.swift; sourceTree = "<group>"; };
+		C06C7CD51BC1C2BB0043E18F /* GameLogicController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameLogicController.swift; path = Controllers/Game/GameLogicController.swift; sourceTree = "<group>"; };
+		C06C7CD81BC1CB5A0043E18F /* GameStatusController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameStatusController.swift; path = Controllers/Game/GameStatusController.swift; sourceTree = "<group>"; };
 		C0E838071BB5829A0052651C /* Hasami Shogi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hasami Shogi.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0E8380B1BB5829A0052651C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C0E8380C1BB5829A0052651C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Helpers/AppDelegate.swift; sourceTree = "<group>"; };
@@ -51,7 +65,7 @@
 		C0E8381F1BB5829A0052651C /* Hasami ShogiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Hasami ShogiTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0E838241BB5829A0052651C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C0E838251BB5829A0052651C /* Hasami_ShogiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hasami_ShogiTests.swift; sourceTree = "<group>"; };
-		C0EC8F971BB6CACE0077BAF9 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameViewController.swift; path = Controllers/GameViewController.swift; sourceTree = "<group>"; };
+		C0EC8F971BB6CACE0077BAF9 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameViewController.swift; path = Controllers/Game/GameViewController.swift; sourceTree = "<group>"; };
 		C0F8E8FB1BBAC6B000A0D2ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C0F8E8FD1BBAD89500A0D2ED /* PlayersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlayersViewController.swift; path = Controllers/PlayersViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -77,6 +91,7 @@
 		C06C7CBB1BC17A980043E18F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				C06C7CD31BC1B3690043E18F /* Player.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -93,7 +108,7 @@
 			children = (
 				C0E838111BB5829A0052651C /* ViewController.swift */,
 				C0F8E8FD1BBAD89500A0D2ED /* PlayersViewController.swift */,
-				C0EC8F971BB6CACE0077BAF9 /* GameViewController.swift */,
+				C06C7CD71BC1C9D80043E18F /* Game */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -111,6 +126,17 @@
 				C0E8380C1BB5829A0052651C /* AppDelegate.swift */,
 			);
 			name = Helpers;
+			sourceTree = "<group>";
+		};
+		C06C7CD71BC1C9D80043E18F /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				C06C7CD11BC1B2220043E18F /* GenerateGameView.swift */,
+				C0EC8F971BB6CACE0077BAF9 /* GameViewController.swift */,
+				C06C7CD51BC1C2BB0043E18F /* GameLogicController.swift */,
+				C06C7CD81BC1CB5A0043E18F /* GameStatusController.swift */,
+			);
+			name = Game;
 			sourceTree = "<group>";
 		};
 		C0E837FE1BB5829A0052651C = {
@@ -177,6 +203,9 @@
 		C0EC8F6A1BB692B90077BAF9 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				C04637CB1BC3A9430036D28A /* cell_marker.png */,
+				C06C7CCD1BC1AA0D0043E18F /* black_checker.png */,
+				C06C7CCE1BC1AA0D0043E18F /* white_checker.png */,
 				C06C7CAF1BC1790F0043E18F /* game.png */,
 				C06C7CB01BC1790F0043E18F /* home.png */,
 				C06C7CB11BC1790F0043E18F /* home63.png */,
@@ -275,9 +304,12 @@
 				C06C7CB71BC1790F0043E18F /* home63.png in Resources */,
 				C0F8E8FC1BBAC6B000A0D2ED /* Main.storyboard in Resources */,
 				C06C7CBA1BC1790F0043E18F /* settings.png in Resources */,
+				C06C7CD01BC1AA0D0043E18F /* white_checker.png in Resources */,
 				C0E8381A1BB5829A0052651C /* LaunchScreen.xib in Resources */,
+				C06C7CCF1BC1AA0D0043E18F /* black_checker.png in Resources */,
 				C0E838171BB5829A0052651C /* Images.xcassets in Resources */,
 				C06C7CB81BC1790F0043E18F /* league.png in Resources */,
+				C04637CC1BC3A9430036D28A /* cell_marker.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,11 +327,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C06C7CD61BC1C2BB0043E18F /* GameLogicController.swift in Sources */,
 				C0EC8F981BB6CACE0077BAF9 /* GameViewController.swift in Sources */,
 				C0E838121BB5829A0052651C /* ViewController.swift in Sources */,
 				C0E8380D1BB5829A0052651C /* AppDelegate.swift in Sources */,
+				C06C7CD21BC1B2220043E18F /* GenerateGameView.swift in Sources */,
+				C06C7CD41BC1B3690043E18F /* Player.swift in Sources */,
 				C0F8E8FE1BBAD89500A0D2ED /* PlayersViewController.swift in Sources */,
 				C0E838101BB5829A0052651C /* Hasami_Shogi.xcdatamodeld in Sources */,
+				C06C7CD91BC1CB5A0043E18F /* GameStatusController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

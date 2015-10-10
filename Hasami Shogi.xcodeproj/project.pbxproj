@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C04637CC1BC3A9430036D28A /* cell_marker.png in Resources */ = {isa = PBXBuildFile; fileRef = C04637CB1BC3A9430036D28A /* cell_marker.png */; settings = {ASSET_TAGS = (); }; };
+		C04E43741BC9061C00BCA93B /* GameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04E43731BC9061C00BCA93B /* GameCell.swift */; settings = {ASSET_TAGS = (); }; };
 		C06C7CB51BC1790F0043E18F /* game.png in Resources */ = {isa = PBXBuildFile; fileRef = C06C7CAF1BC1790F0043E18F /* game.png */; settings = {ASSET_TAGS = (); }; };
 		C06C7CB61BC1790F0043E18F /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = C06C7CB01BC1790F0043E18F /* home.png */; settings = {ASSET_TAGS = (); }; };
 		C06C7CB71BC1790F0043E18F /* home63.png in Resources */ = {isa = PBXBuildFile; fileRef = C06C7CB11BC1790F0043E18F /* home63.png */; settings = {ASSET_TAGS = (); }; };
@@ -43,6 +44,7 @@
 
 /* Begin PBXFileReference section */
 		C04637CB1BC3A9430036D28A /* cell_marker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cell_marker.png; path = "Hasami Shogi/Assets/cell_marker.png"; sourceTree = "<group>"; };
+		C04E43731BC9061C00BCA93B /* GameCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameCell.swift; path = Models/GameCell.swift; sourceTree = "<group>"; };
 		C06C7CAF1BC1790F0043E18F /* game.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = game.png; path = "Hasami Shogi/Assets/game.png"; sourceTree = "<group>"; };
 		C06C7CB01BC1790F0043E18F /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = home.png; path = "Hasami Shogi/Assets/home.png"; sourceTree = "<group>"; };
 		C06C7CB11BC1790F0043E18F /* home63.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = home63.png; path = "Hasami Shogi/Assets/home63.png"; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				C06C7CD31BC1B3690043E18F /* Player.swift */,
+				C04E43731BC9061C00BCA93B /* GameCell.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -332,6 +335,7 @@
 				C0E838121BB5829A0052651C /* ViewController.swift in Sources */,
 				C0E8380D1BB5829A0052651C /* AppDelegate.swift in Sources */,
 				C06C7CD21BC1B2220043E18F /* GenerateGameView.swift in Sources */,
+				C04E43741BC9061C00BCA93B /* GameCell.swift in Sources */,
 				C06C7CD41BC1B3690043E18F /* Player.swift in Sources */,
 				C0F8E8FE1BBAD89500A0D2ED /* PlayersViewController.swift in Sources */,
 				C0E838101BB5829A0052651C /* Hasami_Shogi.xcdatamodeld in Sources */,

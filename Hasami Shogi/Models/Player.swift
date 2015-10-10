@@ -31,4 +31,5 @@ struct Player {
 enum PlayerNum {
     case player1
     case player2
+    case empty
 }

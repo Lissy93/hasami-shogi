@@ -16,14 +16,6 @@ class GenerateGameView {
     init(gvc: GameViewController){
         self.gvc = gvc
     }
-
-    
-    func startSetup(){
-            createElements()
-        
-        
-    }
-    
     
     
     func createElements(){
@@ -38,7 +30,8 @@ class GenerateGameView {
         gameGrid = UICollectionView(frame: gvc.view.frame, collectionViewLayout: layout)
         gameGrid.dataSource = gvc
         gameGrid.delegate = gvc
-        gameGrid.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
+        gameGrid.registerClass(GameCell.self, forCellWithReuseIdentifier: "Cell")
+
         gameGrid.backgroundColor = UIColor.whiteColor()
         gameGrid.translatesAutoresizingMaskIntoConstraints = false
         

@@ -12,34 +12,61 @@ class GameLogic {
     
     var player1 = Player(playerNum: PlayerNum.player1, playerName: "Alicia", moves: 0, piecePositions: [0,1,2,3,4,5,6,7,8])
     
-    var player2 = Player(playerNum: PlayerNum.player2, playerName: "Ollie", moves: 0, piecePositions: [72, 73, 74, 75, 76, 77, 78, 79, 80])
+    var player2 = Player(playerNum: PlayerNum.player2, playerName: "LIZZARD", moves: 0, piecePositions: [72, 73, 74, 75, 76, 77, 78, 79, 80])
     
 
     // Method called when a cell is pressed
     func cellPressed(cell: UICollectionViewCell, cellIndex: Int){
-////        if player1.piecePositions.contains(cellIndex){
-//            findPossibleMoves(cellIndex)
-////        }
-//        
-//        
-//        
-//        
-//        putDotInGrid(cell)
+
     }
     
-    // Places dots on the squares the user could move to
-    func findPossibleMoves(cellIndex: Int) -> [Int] {
+    // Finds a list of cell cordinates where the user can valid move to
+    func findPossibleMoves(cellCordinates: CellCordinates, collectionView: UICollectionView) -> [CellCordinates] {
+
+        var cellsToMark: [CellCordinates] = []
+
+        func isCellBelowValid(currentCell: CellCordinates){
+            if let theCell = collectionView.cellForItemAtIndexPath(NSIndexPath(forRow: currentCell.y, inSection: currentCell.x-1)) as! GameCell?{
+                if(theCell.cellStatus == .empty){
+                    cellsToMark.append(theCell.cellCordinates)
+                    isCellBelowValid(theCell.cellCordinates)
+                }
+            }
+        }
         
-        // Find coloumn and row number
-        let colNum = cellIndex % 9
-        let rowNum = cellIndex / 9
+        func isCellAboveValid(currentCell: CellCordinates){
+            if let theCell = collectionView.cellForItemAtIndexPath(NSIndexPath(forRow: currentCell.y, inSection: currentCell.x+1)) as! GameCell?{
+                if(theCell.cellStatus == .empty){
+                    cellsToMark.append(theCell.cellCordinates)
+                    isCellAboveValid(theCell.cellCordinates)
+                }
+            }
+        }
         
-        var cellsToMark: [Int] = []
+        func isCellToRightValid(currentCell: CellCordinates){
+            if let theCell = collectionView.cellForItemAtIndexPath(NSIndexPath(forRow: currentCell.y-1, inSection: currentCell.x)) as! GameCell?{
+                if(theCell.cellStatus == .empty){
+                    cellsToMark.append(theCell.cellCordinates)
+                    isCellToRightValid(theCell.cellCordinates)
+            
+                }
+            }
+        }
         
-        // Find list of cells within row and co number
-        for index in 0..<9 { cellsToMark.append(colNum + index*9) }
-        for index in rowNum*9..<rowNum*9+9 { cellsToMark.append(index) }
+        func isCellToLeftValid(currentCell: CellCordinates){
+            if let theCell = collectionView.cellForItemAtIndexPath(NSIndexPath(forRow: currentCell.y+1, inSection: currentCell.x)) as! GameCell?{
+                if(theCell.cellStatus == .empty){
+                    cellsToMark.append(theCell.cellCordinates)
+                    isCellToLeftValid(theCell.cellCordinates)
+                }
+            }
+        }
         
+        
+        isCellAboveValid(cellCordinates)
+        isCellToRightValid(cellCordinates)
+        isCellBelowValid(cellCordinates)
+        isCellToLeftValid(cellCordinates)
         
         return cellsToMark
     }

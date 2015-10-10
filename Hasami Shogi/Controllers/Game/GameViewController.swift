@@ -44,16 +44,18 @@ class GameViewController:
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         if let cell = collectionView.cellForItemAtIndexPath(indexPath) as! GameCell?{
-
-            let cellCordinates = cell.cellCordinates
             
-            let possiblePositions = gameLogic.findPossibleMoves(cellCordinates, collectionView: collectionView)
+            if (cell.cellStatus == .player1) || (cell.cellStatus == .player2){
             
-            for eachCellCordinates in possiblePositions{
-                let currentCell = collectionView.cellForItemAtIndexPath(NSIndexPath(forRow: eachCellCordinates.y, inSection: eachCellCordinates.x))
-                gameLogic.putDotInGrid(currentCell!)
+                let cellCordinates = cell.cellCordinates
+                
+                let possiblePositions = gameLogic.findPossibleMoves(cellCordinates, collectionView: collectionView)
+                
+                for eachCellCordinates in possiblePositions{
+                    let currentCell = collectionView.cellForItemAtIndexPath(NSIndexPath(forRow: eachCellCordinates.y, inSection: eachCellCordinates.x))
+                    gameLogic.putDotInGrid(currentCell!)
+                }
             }
-        
             
         } else {
             // Error indexPath is not on screen: this should never happen.
@@ -63,6 +65,7 @@ class GameViewController:
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
+        // Set up the cells
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as! GameCell
         cell.setCordinates(CellCordinates(x:indexPath.section, y:indexPath.item))
         cell.backgroundColor = cell.getCellBackgroundCol()
@@ -76,15 +79,6 @@ class GameViewController:
             cell.cellStatus = .player2
             gameLogic.placePiece(cell, player: .player2)
         }
-
-//        if gameLogic.player1.piecePositions.contains(indexPath.item){
-//            gameLogic.placePiece(cell, player: gameLogic.player1.playerNum)
-//        }
-//        else if gameLogic.player2.piecePositions.contains(indexPath.item){
-//            gameLogic.placePiece(cell, player: gameLogic.player2.playerNum)
-//        }
-        
-        print(cell.cellCordinates)
         
         return cell
     }

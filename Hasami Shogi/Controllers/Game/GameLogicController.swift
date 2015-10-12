@@ -11,8 +11,10 @@ import UIKit
 class GameLogic {
     
     var player1 = Player(playerNum: PlayerNum.player1, playerName: "Alicia", moves: 0, piecePositions: [0,1,2,3,4,5,6,7,8])
-    
     var player2 = Player(playerNum: PlayerNum.player2, playerName: "LIZZARD", moves: 0, piecePositions: [72, 73, 74, 75, 76, 77, 78, 79, 80])
+    
+    let blackChecker = "black_checker.png"
+    let whiteChecker = "white_checker.png"
     
 
     // Method called when a cell is pressed
@@ -78,8 +80,6 @@ class GameLogic {
     
     // Add Piece to Grid
     func placePiece(cell: UICollectionViewCell, player: PlayerNum){
-        let blackChecker = "black_checker.png"
-        let whiteChecker = "white_checker.png"
         let image = UIImage(named: (player == PlayerNum.player1) ? blackChecker : whiteChecker)
         let imageView = UIImageView(image: image!)
         imageView.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
@@ -94,5 +94,38 @@ class GameLogic {
         cell.addSubview(imageView)
     }
     
+    // Add an outline to cell to indicate piece has been selected
+    func pickUpCell(cell: GameCell){
+        cell.layer.borderWidth = 1
+        cell.layer.borderColor = UIColor.redColor().CGColor
+        cell.pickedUp = true
+    }
+    
+    // Has a user picked up a piece and waiting to put it down
+    func isCellPickedUp(collectionView: UICollectionView) -> Bool {
+        for potentialCell in collectionView.visibleCells() as! [GameCell] {
+            if(potentialCell.pickedUp){
+                return true
+            }
+        }
+        return false
+    }
+    
+    // Gets the GameCell currently being moved
+    func getCurrentlyMovingCell(collectionView: UICollectionView) -> GameCell?{
+        var startCell: GameCell?
+        for potentialCell in collectionView.visibleCells() as! [GameCell] {
+            if(potentialCell.pickedUp){ startCell = potentialCell; break }
+        }
+        return startCell
+    }
+    
+    func makeMove (fromCell: GameCell, toCell: GameCell, player: Player){
+        let image = UIImage(named: (player.playerNum == PlayerNum.player1) ? blackChecker : whiteChecker)
+        let imageView = UIImageView(image: image!)
+        imageView.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+        toCell.addSubview(imageView)
+        fromCell.pickedUp = false
+    }
 
 }

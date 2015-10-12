@@ -45,20 +45,39 @@ class GameViewController:
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         if let cell = collectionView.cellForItemAtIndexPath(indexPath) as! GameCell?{
             
-            if (cell.cellStatus == .player1) || (cell.cellStatus == .player2){
+            if (!gameLogic.isCellPickedUp(collectionView)){
             
-                let cellCordinates = cell.cellCordinates
-                
-                let possiblePositions = gameLogic.findPossibleMoves(cellCordinates, collectionView: collectionView)
-                
-                for eachCellCordinates in possiblePositions{
-                    let currentCell = collectionView.cellForItemAtIndexPath(NSIndexPath(forRow: eachCellCordinates.y, inSection: eachCellCordinates.x))
-                    gameLogic.putDotInGrid(currentCell!)
+                if (cell.cellStatus == .player1) || (cell.cellStatus == .player2){
+                    gameLogic.pickUpCell(cell)
+                    let possiblePositions = gameLogic.findPossibleMoves(cell.cellCordinates, collectionView: collectionView)
+                    for eachCellCordinates in possiblePositions{
+                        let currentCell = collectionView.cellForItemAtIndexPath(NSIndexPath(forRow: eachCellCordinates.y, inSection: eachCellCordinates.x))
+                        gameLogic.putDotInGrid(currentCell!)
+                    }
                 }
             }
+            else{ // A cell is currently picked up and needs to be moved
+                // Find currently picked up cell from last move
+                let startCell: GameCell? = gameLogic.getCurrentlyMovingCell(collectionView)
+                
+                // Check it's a valid move
+                if let confirmedStartCell = startCell{
+                    let startPossiblePositions = gameLogic.findPossibleMoves(confirmedStartCell.cellCordinates, collectionView: collectionView)
+                    
+                    let found = startPossiblePositions.filter{$0.x == cell.cellCordinates.x && $0.y == cell.cellCordinates.y}.count > 0
+                    
+                    print(found)
+                    
+                    if  (found){
+                        gameLogic.makeMove(confirmedStartCell, toCell: cell, player: gameLogic.player1)
+                        
+                    }
+                }
+                
+
+            }
             
-        } else {
-            // Error indexPath is not on screen: this should never happen.
+            
         }
     }
 

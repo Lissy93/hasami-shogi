@@ -31,24 +31,31 @@ class GenerateGameView {
         gameGrid.dataSource = gvc
         gameGrid.delegate = gvc
         gameGrid.registerClass(GameCell.self, forCellWithReuseIdentifier: "Cell")
-
         gameGrid.backgroundColor = UIColor.whiteColor()
         gameGrid.translatesAutoresizingMaskIntoConstraints = false
         
-        // Create the Game Score View
+        // Create the Game Header View
         let gameHeaderView = UIView()
         gameHeaderView.translatesAutoresizingMaskIntoConstraints = false
         let title: UITextField = UITextField (frame:CGRectMake(10, 25, 120, 20));
         title.text = "Hasami Shogi"
         gameHeaderView.addSubview(title)
         
+        // Create the Next Player View
+        let playerTurnView = UIView()
+        playerTurnView.translatesAutoresizingMaskIntoConstraints = false
+        let playerStatus: UITextField = UITextField (frame:CGRectMake(10, 25, 120, 20));
+        playerStatus.text = "Player 1's Turn"
+        playerTurnView.addSubview(playerStatus)
+        
         
         // Add the Game Score View and the Game View to main view
         gvc.view.addSubview(gameHeaderView)
         gvc.view.addSubview(gameGrid)
+        gvc.view.addSubview(playerTurnView)
         
         // Add Constraints
-        if let constraints = applyConstraints([ "view1":gameHeaderView, "view2":gameGrid]){
+        if let constraints = applyConstraints([ "view1":gameHeaderView, "view2":gameGrid, "view3":playerTurnView]){
             
             gvc.view.addConstraints(constraints.mainConstraints_H)
             gvc.view.addConstraints(constraints.mainConstraints_V)
@@ -58,6 +65,10 @@ class GenerateGameView {
             
             gameGrid.addConstraints(constraints.gameConstraints_H)
             gameGrid.addConstraints(constraints.gameConstraints_V)
+            
+            playerTurnView.addConstraints(constraints.playerTurnConstraints_H)
+            playerTurnView.addConstraints(constraints.playerTurnConstraints_V)
+            
         }
     
     }
@@ -66,13 +77,15 @@ class GenerateGameView {
     func applyConstraints(viewsDictionary: Dictionary<String,UIView>) -> (
         mainConstraints_H: [NSLayoutConstraint], mainConstraints_V: [NSLayoutConstraint],
         headerConstraints_H: [NSLayoutConstraint], headerConstraints_V: [NSLayoutConstraint],
-        gameConstraints_H: [NSLayoutConstraint], gameConstraints_V: [NSLayoutConstraint])? {
+        gameConstraints_H: [NSLayoutConstraint], gameConstraints_V: [NSLayoutConstraint],
+        playerTurnConstraints_H: [NSLayoutConstraint], playerTurnConstraints_V: [NSLayoutConstraint])? {
             
-            var mc_H, mc_V, hc_H, hc_V, gc_H, gc_V: [NSLayoutConstraint] // Results to return
+            var mc_H, mc_V, hc_H, hc_V, gc_H, gc_V, pt_H, pt_V: [NSLayoutConstraint] // Results to return
             
             let metricsDictionary = [
                 "view1Height": 50.0,
-                "view2Height":40.0,
+                "view2Height":300.0,
+                "view3Height":30.0,
                 "viewWidth": 290.0 ]
             
             let view_constraint_H = NSLayoutConstraint.constraintsWithVisualFormat(
@@ -80,7 +93,7 @@ class GenerateGameView {
                 options: NSLayoutFormatOptions(rawValue:0),
                 metrics: nil, views: viewsDictionary)
             let view_constraint_V = NSLayoutConstraint.constraintsWithVisualFormat(
-                "V:|-36-[view1]-8-[view2]-0-|",
+                "V:|-36-[view1]-8-[view2]-0-[view3]|",
                 options: NSLayoutFormatOptions.AlignAllLeading,
                 metrics: nil, views: viewsDictionary)
             
@@ -88,7 +101,7 @@ class GenerateGameView {
             mc_V = view_constraint_V
             
             
-            // Game Score View Contstraints
+            // Game Header View Contstraints
             let view1_constraint_H = NSLayoutConstraint.constraintsWithVisualFormat(
                 "H:[view1(viewWidth)]",
                 options: NSLayoutFormatOptions(rawValue:0),
@@ -110,7 +123,7 @@ class GenerateGameView {
                 metrics: metricsDictionary,
                 views: viewsDictionary)
             let view2_constraint_V = NSLayoutConstraint.constraintsWithVisualFormat(
-                "V:[view2(>=view2Height)]",
+                "V:[view2(view2Height)]",
                 options: NSLayoutFormatOptions(rawValue:0),
                 metrics: metricsDictionary,
                 views: viewsDictionary)
@@ -118,7 +131,23 @@ class GenerateGameView {
             gc_H = view2_constraint_H
             gc_V = view2_constraint_V
             
-            return (mc_H, mc_V, hc_H, hc_V, gc_H, gc_V)
+            
+            // Player Turn View Constraints
+            let view3_constraint_H = NSLayoutConstraint.constraintsWithVisualFormat(
+                "H:[view3(viewWidth)]",
+                options: NSLayoutFormatOptions(rawValue:0),
+                metrics: metricsDictionary,
+                views: viewsDictionary)
+            let view3_constraint_V = NSLayoutConstraint.constraintsWithVisualFormat(
+                "V:[view3(>=view3Height)]",
+                options: NSLayoutFormatOptions(rawValue:0),
+                metrics: metricsDictionary,
+                views: viewsDictionary)
+            
+            pt_H = view3_constraint_H
+            pt_V = view3_constraint_V
+            
+            return (mc_H, mc_V, hc_H, hc_V, gc_H, gc_V, pt_H, pt_V)
     }
 
 }

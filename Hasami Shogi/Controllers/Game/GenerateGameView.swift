@@ -44,8 +44,9 @@ class GenerateGameView {
         // Create the Next Player View
         let playerTurnView = UIView()
         playerTurnView.translatesAutoresizingMaskIntoConstraints = false
-        let playerStatus: UITextField = UITextField (frame:CGRectMake(10, 25, 120, 20));
+        let playerStatus: UITextField = UITextField (frame:CGRectMake(60, 25, 300, 50));
         playerStatus.text = "Player 1's Turn"
+        playerStatus.font = UIFont (name: "HelveticaNeue-UltraLight", size: 30)
         playerTurnView.addSubview(playerStatus)
         
         

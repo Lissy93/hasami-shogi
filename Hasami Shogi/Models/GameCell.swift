@@ -13,6 +13,7 @@ class GameCell: UICollectionViewCell {
     var cellCordinates: CellCordinates! // Will be assigned after creation
     var cellStatus: PlayerNum = .empty  // Does the cell have a piece in it?
     var pickedUp: Bool = false          // Is the pice currently being moved?
+    var containsDot: Bool = false       // Is this cell marked as a valid move
     
     override init(frame: CGRect) {
         super.init(frame: frame)

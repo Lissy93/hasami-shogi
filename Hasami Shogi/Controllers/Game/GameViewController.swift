@@ -51,8 +51,8 @@ class GameViewController:
                     gameLogic.pickUpCell(cell)
                     let possiblePositions = gameLogic.findPossibleMoves(cell.cellCordinates, collectionView: collectionView)
                     for eachCellCordinates in possiblePositions{
-                        let currentCell = collectionView.cellForItemAtIndexPath(NSIndexPath(forRow: eachCellCordinates.y, inSection: eachCellCordinates.x))
-                        gameLogic.putDotInGrid(currentCell!)
+                        let currentCell = collectionView.cellForItemAtIndexPath(NSIndexPath(forRow: eachCellCordinates.y, inSection: eachCellCordinates.x)) as! GameCell
+                        gameLogic.putDotInGrid(currentCell)
                     }
                 }
             }
@@ -63,13 +63,9 @@ class GameViewController:
                 // Check it's a valid move
                 if let confirmedStartCell = startCell{
                     let startPossiblePositions = gameLogic.findPossibleMoves(confirmedStartCell.cellCordinates, collectionView: collectionView)
-                    
                     let found = startPossiblePositions.filter{$0.x == cell.cellCordinates.x && $0.y == cell.cellCordinates.y}.count > 0
-                    
-                    print(found)
-                    
                     if  (found){
-                        gameLogic.makeMove(confirmedStartCell, toCell: cell, player: gameLogic.player1)
+                        gameLogic.makeMove(confirmedStartCell, toCell: cell, player: gameLogic.player1, collectionView: collectionView)
                         
                     }
                 }
@@ -91,11 +87,9 @@ class GameViewController:
         
         // Place the players pieces
         if(cell.cellCordinates.y == 0){
-            cell.cellStatus = .player1
             gameLogic.placePiece(cell, player: .player1)
         }
         if(cell.cellCordinates.y == 8){
-            cell.cellStatus = .player2
             gameLogic.placePiece(cell, player: .player2)
         }
         

@@ -14,18 +14,6 @@ struct Player {
     var moves: Int
     var piecePositions: [Int]
     
-    mutating func makeMove(from: Int, to: Int){
-        // Remove old piece position
-        if let index = piecePositions.indexOf(from){
-            piecePositions.removeAtIndex(index)
-        }
-        
-        // Add in new piece position
-        piecePositions.append(to)
-        
-        moves++
-    }
-    
 }
 
 enum PlayerNum {

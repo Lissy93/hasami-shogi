@@ -180,25 +180,40 @@ class GameLogic {
                 if firstCell.cellStatus == enemy{
                     if let nextCell = collectionView.cellForItemAtIndexPath(NSIndexPath(forRow: nextCordinates.y, inSection: nextCordinates.x)) as! GameCell?{
                         if nextCell.cellStatus == ally.playerNum{
-                            removePiece(firstCell)
-                            print("SUROUNDED!!!!!!!!!!!!!!!!!")
+                            removePiece(firstCell) // Destroy Enemy
                         }
                     }
                 }
             }
         }
 
-        checkForKill(CellCordinates(x: newCellCordinates.x-1, y: newCellCordinates.y), nextCordinates: CellCordinates(x: newCellCordinates.x-2, y: newCellCordinates.y))
-        checkForKill(CellCordinates(x: newCellCordinates.x+1, y: newCellCordinates.y), nextCordinates: CellCordinates(x: newCellCordinates.x+2, y: newCellCordinates.y))
-        checkForKill(CellCordinates(x: newCellCordinates.x, y: newCellCordinates.y-1), nextCordinates: CellCordinates(x: newCellCordinates.x, y: newCellCordinates.y-2))
-        checkForKill(CellCordinates(x: newCellCordinates.x, y: newCellCordinates.y+1), nextCordinates: CellCordinates(x: newCellCordinates.x, y: newCellCordinates.y+2))
-        
+        checkForKill(
+            CellCordinates(x: newCellCordinates.x-1, y: newCellCordinates.y),
+            nextCordinates: CellCordinates(x: newCellCordinates.x-2, y: newCellCordinates.y))
+        checkForKill(
+            CellCordinates(x: newCellCordinates.x+1, y: newCellCordinates.y),
+            nextCordinates: CellCordinates(x: newCellCordinates.x+2, y: newCellCordinates.y))
+        checkForKill(
+            CellCordinates(x: newCellCordinates.x, y: newCellCordinates.y-1),
+            nextCordinates: CellCordinates(x: newCellCordinates.x, y: newCellCordinates.y-2))
+        checkForKill(
+            CellCordinates(x: newCellCordinates.x, y: newCellCordinates.y+1),
+            nextCordinates: CellCordinates(x: newCellCordinates.x, y: newCellCordinates.y+2))
     }
     
-        
-        
-        
-        
+    // Determines if a player has won by number of pieces left on grid
+    func checkForWin(collectionView: UICollectionView) -> PlayerNum{
+        var player1Count: Int = 0, player2Count: Int = 0
+        for cell in collectionView.visibleCells() as! [GameCell] {
+            if cell.cellStatus == .player1{ player1Count++ }
+            else if cell.cellStatus == .player2{ player2Count++ }
+        }
+        if player1Count <= 1 { return .player1}
+        else if player2Count <= 1{ return .player2}
+        else{ return .empty}
+    }
+    
+    
         
     // Calls the functions required to actually move a piece and update all attributes
     func makeMove (fromCell: GameCell, toCell: GameCell, player: Player, collectionView: UICollectionView){

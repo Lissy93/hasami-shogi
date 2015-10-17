@@ -70,6 +70,12 @@ class GameViewController:
                     if  (found){
                         gameLogic.makeMove(confirmedStartCell, toCell: cell, player: gameLogic.getCurrentPlayer(), collectionView: collectionView)
                         updatePlayerTurnText()
+                        if gameLogic.checkForWin(collectionView) != .empty{
+                            var alert = UIAlertController(title: "Game Won!", message: "Message", preferredStyle: UIAlertControllerStyle.Alert)
+                            alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.Default, handler: nil))
+                            self.presentViewController(alert, animated: true, completion: nil)
+                        
+                        }
                     }
                 }
 

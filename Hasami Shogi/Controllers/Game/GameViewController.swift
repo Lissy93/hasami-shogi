@@ -23,7 +23,9 @@ class GameViewController:
         let ggv: GenerateGameView = GenerateGameView(gvc: self) 
         ggv.createElements() // Set up the game board
         gameStatusTexts["playerTurn"] = ggv.playerStatus
+        gameStatusTexts["playerStatus"] = ggv.playerPieceCount
         updatePlayerTurnText()
+        updatePlayerStatusText()
     }
     
     // Set number of cells per row for game grid
@@ -45,33 +47,34 @@ class GameViewController:
     
     
     
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        if let cell = collectionView.cellForItemAtIndexPath(indexPath) as! GameCell?{
+    func collectionView(gameCollectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        if let cell = gameCollectionView.cellForItemAtIndexPath(indexPath) as! GameCell?{
             
-            if (!gameLogic.isCellPickedUp(collectionView)){
+            if (!gameLogic.isCellPickedUp(gameCollectionView)){
             
                 if (cell.cellStatus == gameLogic.getCurrentPlayer().playerNum){
                     gameLogic.pickUpCell(cell)
-                    let possiblePositions = gameLogic.findPossibleMoves(cell.cellCordinates, collectionView: collectionView)
+                    let possiblePositions = gameLogic.findPossibleMoves(cell.cellCordinates, collectionView: gameCollectionView)
                     for eachCellCordinates in possiblePositions{
-                        let currentCell = collectionView.cellForItemAtIndexPath(NSIndexPath(forRow: eachCellCordinates.y, inSection: eachCellCordinates.x)) as! GameCell
+                        let currentCell = gameCollectionView.cellForItemAtIndexPath(NSIndexPath(forRow: eachCellCordinates.y, inSection: eachCellCordinates.x)) as! GameCell
                         gameLogic.putDotInGrid(currentCell)
                     }
                 }
             }
             else{ // A cell is currently picked up and needs to be moved
                 // Find currently picked up cell from last move
-                let startCell: GameCell? = gameLogic.getCurrentlyMovingCell(collectionView)
+                let startCell: GameCell? = gameLogic.getCurrentlyMovingCell(gameCollectionView)
                 
                 // Check it's a valid move
                 if let confirmedStartCell = startCell{
-                    let startPossiblePositions = gameLogic.findPossibleMoves(confirmedStartCell.cellCordinates, collectionView: collectionView)
+                    let startPossiblePositions = gameLogic.findPossibleMoves(confirmedStartCell.cellCordinates, collectionView: gameCollectionView)
                     let found = startPossiblePositions.filter{$0.x == cell.cellCordinates.x && $0.y == cell.cellCordinates.y}.count > 0
                     if  (found){
-                        gameLogic.makeMove(confirmedStartCell, toCell: cell, player: gameLogic.getCurrentPlayer(), collectionView: collectionView)
+                        gameLogic.makeMove(confirmedStartCell, toCell: cell, player: gameLogic.getCurrentPlayer(), collectionView: gameCollectionView)
                         updatePlayerTurnText()
-                        let winStatus = gameLogic.checkForWin(collectionView)
+                        let winStatus = gameLogic.checkForWin(gameCollectionView)
                         if winStatus != .empty{ gameWon(winStatus) }
+                        updatePlayerStatusText(gameCollectionView)
                     }
                 }
 
@@ -85,6 +88,18 @@ class GameViewController:
     func updatePlayerTurnText(){
         gameStatusTexts["playerTurn"]!.text = gameLogic.getCurrentPlayer().playerName + "'s Turn"
     }
+    
+    
+    func updatePlayerStatusText(gameCollectionView: UICollectionView){
+        gameStatusTexts["playerStatus"]!.text =
+            "\(gameLogic.player1.playerName)': \(gameLogic.howMangePiecesLeft(.player1, collectionView: gameCollectionView)) \t\t\t\t\t \(gameLogic.player2.playerName): \(gameLogic.howMangePiecesLeft(.player2, collectionView: gameCollectionView))"
+    }
+    
+    func updatePlayerStatusText(){
+        gameStatusTexts["playerStatus"]!.text =
+        "\(gameLogic.player1.playerName): 9 \t\t\t\t\t \(gameLogic.player2.playerName): 9"
+    }
+    
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
 
@@ -127,6 +142,7 @@ class GameViewController:
         
         self.presentViewController(alertController, animated: true) {}
     }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

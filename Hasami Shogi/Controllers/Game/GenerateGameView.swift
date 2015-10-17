@@ -14,6 +14,8 @@ class GenerateGameView {
     let gvc: GameViewController
     
     let playerStatus: UITextField = UITextField (frame:CGRectMake(0, 25, 290, 50));
+    let playerPieceCount: UITextField = UITextField (frame:CGRectMake(0, 0, 290, 50))
+
     
     init(gvc: GameViewController){
         self.gvc = gvc
@@ -39,9 +41,9 @@ class GenerateGameView {
         // Create the Game Header View
         let gameHeaderView = UIView()
         gameHeaderView.translatesAutoresizingMaskIntoConstraints = false
-        let title: UITextField = UITextField (frame:CGRectMake(10, 25, 120, 20));
-        title.text = "Hasami Shogi"
-        gameHeaderView.addSubview(title)
+        playerPieceCount.font = UIFont (name: "HelveticaNeue-UltraLight", size: 16)
+        playerPieceCount.text = ""
+        gameHeaderView.addSubview(playerPieceCount)
         
         // Create the Next Player View
         let playerTurnView = UIView()

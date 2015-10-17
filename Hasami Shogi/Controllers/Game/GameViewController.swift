@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class GameViewController:
     UIViewController,
@@ -59,7 +60,11 @@ class GameViewController:
                         let currentCell = gameCollectionView.cellForItemAtIndexPath(NSIndexPath(forRow: eachCellCordinates.y, inSection: eachCellCordinates.x)) as! GameCell
                         gameLogic.putDotInGrid(currentCell)
                     }
+                    playPickupSound()
                 }
+        
+
+                
             }
             else{ // A cell is currently picked up and needs to be moved
                 // Find currently picked up cell from last move
@@ -73,8 +78,12 @@ class GameViewController:
                         gameLogic.makeMove(confirmedStartCell, toCell: cell, player: gameLogic.getCurrentPlayer(), collectionView: gameCollectionView)
                         updatePlayerTurnText()
                         let winStatus = gameLogic.checkForWin(gameCollectionView)
-                        if winStatus != .empty{ gameWon(winStatus) }
+                        if winStatus != .empty{
+                            gameWon(winStatus)
+                            playVictoryMusic()
+                        }
                         updatePlayerStatusText(gameCollectionView)
+                        playPutdownSound()
                     }
                 }
 
@@ -141,6 +150,31 @@ class GameViewController:
         alertController.addAction(highScoresAction)
         
         self.presentViewController(alertController, animated: true) {}
+    }
+    
+    
+    func playPickupSound(){
+        if let pickupSoundUrl = NSBundle.mainBundle().URLForResource("pickup", withExtension: "mp3") {
+            var mySound: SystemSoundID = 0
+            AudioServicesCreateSystemSoundID(pickupSoundUrl, &mySound)
+            AudioServicesPlaySystemSound(mySound); // Play sound
+        }
+    }
+    
+    func playPutdownSound(){
+        if let putdownSound = NSBundle.mainBundle().URLForResource("putdown", withExtension: "mp3") {
+            var mySound: SystemSoundID = 0
+            AudioServicesCreateSystemSoundID(putdownSound, &mySound)
+            AudioServicesPlaySystemSound(mySound); // Play sound
+        }
+    }
+    
+    func playVictoryMusic(){
+        if let winSound = NSBundle.mainBundle().URLForResource("win-music", withExtension: "mp3") {
+            var mySound: SystemSoundID = 0
+            AudioServicesCreateSystemSoundID(winSound, &mySound)
+            AudioServicesPlaySystemSound(mySound); // Play sound
+        }
     }
     
     

@@ -59,7 +59,6 @@ class GameLogic {
             }
         }
         
-        
         isCellAboveValid(cellCordinates)
         isCellToRightValid(cellCordinates)
         isCellBelowValid(cellCordinates)
@@ -80,6 +79,7 @@ class GameLogic {
         cell.addSubview(imageView)
     }
     
+    
     // Remove Checker from Cell
     func removePiece(cell: GameCell){
         // Remove image
@@ -90,6 +90,7 @@ class GameLogic {
         cell.cellStatus = .empty // Remove reference to old cell
     }
     
+    
     // Marks a cell with a dot
     func putDotInGrid(cell: GameCell){
         let image = UIImage(named: "cell_marker.png")
@@ -98,6 +99,7 @@ class GameLogic {
         cell.addSubview(imageView)
         cell.containsDot = true
     }
+    
     
     // Removes all does from cells after move has been made
     func removeAllDotsFromCells(collectionView: UICollectionView){
@@ -112,6 +114,7 @@ class GameLogic {
     
     }
     
+    
     // Add an outline to cell to indicate piece has been selected
     func pickUpCell(cell: GameCell){
         cell.layer.borderWidth = 1
@@ -119,11 +122,13 @@ class GameLogic {
         cell.pickedUp = true
     }
     
+    
     // Removes the outline and resets the picked up reference
     func putDownCell(cell: GameCell){
         cell.layer.borderWidth = 0
         cell.pickedUp = false
     }
+    
     
     // Has a user picked up a piece and waiting to put it down
     func isCellPickedUp(collectionView: UICollectionView) -> Bool {
@@ -135,6 +140,7 @@ class GameLogic {
         return false
     }
     
+    
     // Gets the GameCell currently being moved
     func getCurrentlyMovingCell(collectionView: UICollectionView) -> GameCell?{
         var startCell: GameCell?
@@ -143,6 +149,7 @@ class GameLogic {
         }
         return startCell
     }
+    
     
     // Change which players turn it is
     func changePlayer(lastPlayerNum: PlayerNum){
@@ -156,10 +163,12 @@ class GameLogic {
         }
     }
     
+    
     // Returns the player number for whoever's turn it is
     func getCurrentPlayer() -> Player{
         return (player1.playerTurn) ? player1 : player2 ;
     }
+    
     
     // Who's the enemy?
     func getEnemyPlayerNum() -> PlayerNum{
@@ -167,6 +176,11 @@ class GameLogic {
 
     }
     
+    
+    // Get Player object from playerNum
+    func getPlayerFromPlayerNum(playerNum: PlayerNum) -> Player{
+        return (playerNum == .player1) ? player1 : player2
+    }
     
     
     // Looks to see if a checker is sucessfully surrounded
@@ -201,6 +215,7 @@ class GameLogic {
             nextCordinates: CellCordinates(x: newCellCordinates.x, y: newCellCordinates.y+2))
     }
     
+    
     // Determines if a player has won by number of pieces left on grid
     func checkForWin(collectionView: UICollectionView) -> PlayerNum{
         var player1Count: Int = 0, player2Count: Int = 0
@@ -212,7 +227,6 @@ class GameLogic {
         else if player2Count <= 1{ return .player2}
         else{ return .empty}
     }
-    
     
         
     // Calls the functions required to actually move a piece and update all attributes

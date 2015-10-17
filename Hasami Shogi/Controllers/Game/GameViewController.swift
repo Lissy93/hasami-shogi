@@ -113,12 +113,15 @@ class GameViewController:
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
         
         let newGameAction = UIAlertAction(title: "New Game", style: .Default) { (action) in
-            print("New Game Pressed!")
+            self.view.subviews.forEach({ $0.removeFromSuperview() })
+            self.viewWillAppear(true)
+            self.viewDidLoad()
+
         }
         alertController.addAction(newGameAction)
         
         let highScoresAction = UIAlertAction(title: "High Scoress", style: .Default) { (action) in
-            print("High Scores Action")
+
         }
         alertController.addAction(highScoresAction)
         

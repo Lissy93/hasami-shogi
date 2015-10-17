@@ -70,12 +70,8 @@ class GameViewController:
                     if  (found){
                         gameLogic.makeMove(confirmedStartCell, toCell: cell, player: gameLogic.getCurrentPlayer(), collectionView: collectionView)
                         updatePlayerTurnText()
-                        if gameLogic.checkForWin(collectionView) != .empty{
-                            var alert = UIAlertController(title: "Game Won!", message: "Message", preferredStyle: UIAlertControllerStyle.Alert)
-                            alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.Default, handler: nil))
-                            self.presentViewController(alert, animated: true, completion: nil)
-                        
-                        }
+                        let winStatus = gameLogic.checkForWin(collectionView)
+                        if winStatus != .empty{ gameWon(winStatus) }
                     }
                 }
 
@@ -91,7 +87,7 @@ class GameViewController:
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        
+
         // Set up the cells
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as! GameCell
         cell.setCordinates(CellCordinates(x:indexPath.section, y:indexPath.item))
@@ -108,7 +104,26 @@ class GameViewController:
         return cell
     }
 
-    
+    // Display Game Won message
+    func gameWon(winner: PlayerNum){
+        
+        let title = "Game Won!"
+        let message = gameLogic.getPlayerFromPlayerNum(winner).playerName + " won the game!"
+        
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+        
+        let newGameAction = UIAlertAction(title: "New Game", style: .Default) { (action) in
+            print("New Game Pressed!")
+        }
+        alertController.addAction(newGameAction)
+        
+        let highScoresAction = UIAlertAction(title: "High Scoress", style: .Default) { (action) in
+            print("High Scores Action")
+        }
+        alertController.addAction(highScoresAction)
+        
+        self.presentViewController(alertController, animated: true) {}
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

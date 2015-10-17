@@ -218,13 +218,14 @@ class GameLogic {
     
     // Determines if a player has won by number of pieces left on grid
     func checkForWin(collectionView: UICollectionView) -> PlayerNum{
+        let piecesToWin = 1 // The number of peices left to win
         var player1Count: Int = 0, player2Count: Int = 0
         for cell in collectionView.visibleCells() as! [GameCell] {
             if cell.cellStatus == .player1{ player1Count++ }
             else if cell.cellStatus == .player2{ player2Count++ }
         }
-        if player1Count <= 1 { return .player1}
-        else if player2Count <= 1{ return .player2}
+        if player1Count <= piecesToWin { return .player2}
+        else if player2Count <= piecesToWin{ return .player1}
         else{ return .empty}
     }
     

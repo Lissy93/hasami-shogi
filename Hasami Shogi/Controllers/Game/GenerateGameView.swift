@@ -13,7 +13,7 @@ class GenerateGameView {
     var gameGrid: UICollectionView!
     let gvc: GameViewController
     
-    let playerStatus: UITextField = UITextField (frame:CGRectMake(60, 25, 150, 50));
+    let playerStatus: UITextField = UITextField (frame:CGRectMake(0, 25, 290, 50));
     
     init(gvc: GameViewController){
         self.gvc = gvc

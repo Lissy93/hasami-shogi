@@ -161,14 +161,54 @@ class GameLogic {
         return (player1.playerTurn) ? player1 : player2 ;
     }
     
+    // Who's the enemy?
+    func getEnemyPlayerNum() -> PlayerNum{
+        return (getCurrentPlayer().playerNum == .player1) ? .player2 : .player1
+
+    }
     
+    
+    
+    // Looks to see if a checker is sucessfully surrounded
+    func checkIfPieceShouldBeTaken(newCellCordinates: CellCordinates, collectionView: UICollectionView){
+        
+        let enemy = getEnemyPlayerNum()
+        let ally = getCurrentPlayer()
+        
+        func checkForKill(firstCordinates: CellCordinates, nextCordinates: CellCordinates){
+            if let firstCell = collectionView.cellForItemAtIndexPath(NSIndexPath(forRow: firstCordinates.y, inSection: firstCordinates.x)) as! GameCell?{
+                if firstCell.cellStatus == enemy{
+                    if let nextCell = collectionView.cellForItemAtIndexPath(NSIndexPath(forRow: nextCordinates.y, inSection: nextCordinates.x)) as! GameCell?{
+                        if nextCell.cellStatus == ally.playerNum{
+                            removePiece(firstCell)
+                            print("SUROUNDED!!!!!!!!!!!!!!!!!")
+                        }
+                    }
+                }
+            }
+        }
+
+        checkForKill(CellCordinates(x: newCellCordinates.x-1, y: newCellCordinates.y), nextCordinates: CellCordinates(x: newCellCordinates.x-2, y: newCellCordinates.y))
+        checkForKill(CellCordinates(x: newCellCordinates.x+1, y: newCellCordinates.y), nextCordinates: CellCordinates(x: newCellCordinates.x+2, y: newCellCordinates.y))
+        checkForKill(CellCordinates(x: newCellCordinates.x, y: newCellCordinates.y-1), nextCordinates: CellCordinates(x: newCellCordinates.x, y: newCellCordinates.y-2))
+        checkForKill(CellCordinates(x: newCellCordinates.x, y: newCellCordinates.y+1), nextCordinates: CellCordinates(x: newCellCordinates.x, y: newCellCordinates.y+2))
+        
+    }
+    
+        
+        
+        
+        
+        
     // Calls the functions required to actually move a piece and update all attributes
     func makeMove (fromCell: GameCell, toCell: GameCell, player: Player, collectionView: UICollectionView){
         removeAllDotsFromCells(collectionView) // Remove all blue placeholder dots
         putDownCell(fromCell) // Put first cell back down
         removePiece(fromCell) // Remove old piece and reset reference
         placePiece(toCell, player: player.playerNum) // Add piece to new cell
+        checkIfPieceShouldBeTaken(toCell.cellCordinates, collectionView: collectionView)
         changePlayer(player.playerNum) // Change who's turn it is
     }
 
+    
 }

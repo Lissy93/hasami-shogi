@@ -13,7 +13,7 @@ class GenerateGameView {
     var gameGrid: UICollectionView!
     let gvc: GameViewController
     
-    let playerStatus: UITextField = UITextField (frame:CGRectMake(60, 25, 300, 50));
+    let playerStatus: UITextField = UITextField (frame:CGRectMake(60, 25, 150, 50));
     
     init(gvc: GameViewController){
         self.gvc = gvc
@@ -46,8 +46,8 @@ class GenerateGameView {
         // Create the Next Player View
         let playerTurnView = UIView()
         playerTurnView.translatesAutoresizingMaskIntoConstraints = false
-
-        playerStatus.text = "Player 1's Turn"
+        playerStatus.text = ""
+        playerStatus.textAlignment = .Center
         playerStatus.font = UIFont (name: "HelveticaNeue-UltraLight", size: 30)
         playerTurnView.addSubview(playerStatus)
         

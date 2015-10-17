@@ -15,12 +15,15 @@ class GameViewController:
     
 
     var gameLogic = GameLogic() // Contains all the logic for playing the game
+    var gameStatusTexts = [String: UITextField]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let ggv: GenerateGameView = GenerateGameView(gvc: self) 
         ggv.createElements() // Set up the game board
+        gameStatusTexts["playerTurn"] = ggv.playerStatus
+        updatePlayerTurnText()  
     }
     
     // Set number of cells per row for game grid
@@ -53,7 +56,6 @@ class GameViewController:
                     for eachCellCordinates in possiblePositions{
                         let currentCell = collectionView.cellForItemAtIndexPath(NSIndexPath(forRow: eachCellCordinates.y, inSection: eachCellCordinates.x)) as! GameCell
                         gameLogic.putDotInGrid(currentCell)
-
                     }
                 }
             }
@@ -67,7 +69,7 @@ class GameViewController:
                     let found = startPossiblePositions.filter{$0.x == cell.cellCordinates.x && $0.y == cell.cellCordinates.y}.count > 0
                     if  (found){
                         gameLogic.makeMove(confirmedStartCell, toCell: cell, player: gameLogic.getCurrentPlayer(), collectionView: collectionView)
-                        
+                        updatePlayerTurnText()
                     }
                 }
 
@@ -77,6 +79,10 @@ class GameViewController:
         }
     }
 
+    
+    func updatePlayerTurnText(){
+        gameStatusTexts["playerTurn"]!.text = gameLogic.getCurrentPlayer().playerName + "'s Turn"
+    }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
@@ -102,10 +108,6 @@ class GameViewController:
         super.didReceiveMemoryWarning()
     }
     
-    func setUpGrid () {
-        let grid = UICollectionView();
-        grid
-    }
     
 }
 

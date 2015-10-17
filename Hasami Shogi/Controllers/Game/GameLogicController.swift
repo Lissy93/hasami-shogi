@@ -68,10 +68,6 @@ class GameLogic {
         return cellsToMark
     }
     
-    func getIndexPathFromCellNumber(cellNum: Int) -> NSIndexPath{
-        return NSIndexPath(forRow: cellNum / 9, inSection: cellNum % 9)
-    }
-    
     
     // Add Checker to Cell
     func placePiece(cell: GameCell, player: PlayerNum){

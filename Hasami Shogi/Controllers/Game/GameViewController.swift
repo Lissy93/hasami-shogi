@@ -15,7 +15,7 @@ class GameViewController:
     
 
     var gameLogic = GameLogic() // Contains all the logic for playing the game
-    var gameStatusTexts = [String: UITextField]()
+    var gameStatusTexts = [String: UITextField]() // Stores a list of text fields for displaying various game status's
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +23,7 @@ class GameViewController:
         let ggv: GenerateGameView = GenerateGameView(gvc: self) 
         ggv.createElements() // Set up the game board
         gameStatusTexts["playerTurn"] = ggv.playerStatus
-        updatePlayerTurnText()  
+        updatePlayerTurnText()
     }
     
     // Set number of cells per row for game grid

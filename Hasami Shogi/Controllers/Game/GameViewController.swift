@@ -47,12 +47,13 @@ class GameViewController:
             
             if (!gameLogic.isCellPickedUp(collectionView)){
             
-                if (cell.cellStatus == .player1) || (cell.cellStatus == .player2){
+                if (cell.cellStatus == gameLogic.getCurrentPlayer().playerNum){
                     gameLogic.pickUpCell(cell)
                     let possiblePositions = gameLogic.findPossibleMoves(cell.cellCordinates, collectionView: collectionView)
                     for eachCellCordinates in possiblePositions{
                         let currentCell = collectionView.cellForItemAtIndexPath(NSIndexPath(forRow: eachCellCordinates.y, inSection: eachCellCordinates.x)) as! GameCell
                         gameLogic.putDotInGrid(currentCell)
+
                     }
                 }
             }
@@ -65,11 +66,10 @@ class GameViewController:
                     let startPossiblePositions = gameLogic.findPossibleMoves(confirmedStartCell.cellCordinates, collectionView: collectionView)
                     let found = startPossiblePositions.filter{$0.x == cell.cellCordinates.x && $0.y == cell.cellCordinates.y}.count > 0
                     if  (found){
-                        gameLogic.makeMove(confirmedStartCell, toCell: cell, player: gameLogic.player1, collectionView: collectionView)
+                        gameLogic.makeMove(confirmedStartCell, toCell: cell, player: gameLogic.getCurrentPlayer(), collectionView: collectionView)
                         
                     }
                 }
-                
 
             }
             

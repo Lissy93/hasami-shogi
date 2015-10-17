@@ -10,17 +10,12 @@ import UIKit
 
 class GameLogic {
     
-    var player1 = Player(playerNum: PlayerNum.player1, playerName: "Alicia", moves: 0, piecePositions: [0,1,2,3,4,5,6,7,8])
-    var player2 = Player(playerNum: PlayerNum.player2, playerName: "LIZZARD", moves: 0, piecePositions: [72, 73, 74, 75, 76, 77, 78, 79, 80])
+    var player1 = Player(playerNum: PlayerNum.player1, playerName: "Alicia", moves: 0, playerTurn: true)
+    var player2 = Player(playerNum: PlayerNum.player2, playerName: "LIZZARD", moves: 0, playerTurn: false)
     
     let blackChecker = "black_checker.png"
     let whiteChecker = "white_checker.png"
-    
 
-    // Method called when a cell is pressed
-    func cellPressed(cell: UICollectionViewCell, cellIndex: Int){
-
-    }
     
     // Finds a list of cell cordinates where the user can valid move to
     func findPossibleMoves(cellCordinates: CellCordinates, collectionView: UICollectionView) -> [CellCordinates] {
@@ -153,11 +148,31 @@ class GameLogic {
         return startCell
     }
     
+    // Change which players turn it is
+    func changePlayer(lastPlayerNum: PlayerNum){
+        if player1.playerNum == lastPlayerNum{
+            player1.playerTurn = false
+            player2.playerTurn = true
+        }
+        else if player2.playerNum == lastPlayerNum{
+            player2.playerTurn = false
+            player1.playerTurn = true
+        }
+    }
+    
+    // Returns the player number for whoever's turn it is
+    func getCurrentPlayer() -> Player{
+        return (player1.playerTurn) ? player1 : player2 ;
+    }
+    
+    
+    // Calls the functions required to actually move a piece and update all attributes
     func makeMove (fromCell: GameCell, toCell: GameCell, player: Player, collectionView: UICollectionView){
         removeAllDotsFromCells(collectionView) // Remove all blue placeholder dots
         putDownCell(fromCell) // Put first cell back down
         removePiece(fromCell) // Remove old piece and reset reference
         placePiece(toCell, player: player.playerNum) // Add piece to new cell
+        changePlayer(player.playerNum) // Change who's turn it is
     }
 
 }

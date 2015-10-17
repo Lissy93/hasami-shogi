@@ -12,7 +12,7 @@ struct Player {
     var playerNum: PlayerNum
     var playerName: String
     var moves: Int
-    var piecePositions: [Int]
+    var playerTurn: Bool
     
 }
 

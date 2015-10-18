@@ -138,6 +138,7 @@ class GameViewController:
     func buttonAction(sender:UIButton!){
         gameStatus.restartGame(self)
     }
+
     
 }
 

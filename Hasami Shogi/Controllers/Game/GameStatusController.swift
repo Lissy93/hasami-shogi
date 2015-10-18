@@ -51,7 +51,7 @@ class GameStatusController{
         alertController.addAction(newGameAction)
         
         let highScoresAction = UIAlertAction(title: "High Scoress", style: .Default) { (action) in
-            
+            gvc.tabBarController?.selectedIndex = 2
         }
         alertController.addAction(highScoresAction)
         

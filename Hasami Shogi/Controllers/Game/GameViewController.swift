@@ -78,6 +78,12 @@ class GameViewController:
                 // Find currently picked up cell from last move
                 let startCell: GameCell? = gameLogic.getCurrentlyMovingCell(gameCollectionView)
                 
+                // Put cell back down if pressed again
+                if(startCell == cell){
+                    gameLogic.putDownCell(startCell!)
+                    gameLogic.removeAllDotsFromCells(gameCollectionView)
+                }
+                
                 // Check it's a valid move
                 if let confirmedStartCell = startCell{
                     let startPossiblePositions = gameLogic.findPossibleMoves(confirmedStartCell.cellCordinates, collectionView: gameCollectionView)

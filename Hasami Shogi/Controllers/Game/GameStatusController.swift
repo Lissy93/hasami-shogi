@@ -87,12 +87,20 @@ class GameStatusController{
             AudioServicesPlaySystemSound(mySound); // Play sound
         }
     }
+
     
     
-    // Calls the restart game method when the restart button is pressed
-    func buttonAction(sender:UIButton!, gvc: GameViewController){
-        restartGame(gvc)
+    // Plays a sound when the game is won
+    func playRestartSound(){
+        if let restartSound = NSBundle.mainBundle().URLForResource("restart", withExtension: "mp3") {
+            var mySound: SystemSoundID = 0
+            AudioServicesCreateSystemSoundID(restartSound, &mySound)
+            AudioServicesPlaySystemSound(mySound); // Play sound
+        }
     }
+    
+    
+
     
     
     // Restarts the game
@@ -100,6 +108,7 @@ class GameStatusController{
         gvc.view.subviews.forEach({ $0.removeFromSuperview() })
         gvc.viewWillAppear(true)
         gvc.viewDidLoad()
+        playRestartSound()
     }
     
 

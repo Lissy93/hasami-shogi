@@ -125,5 +125,10 @@ class GameViewController:
     }
     
     
+    // Calls the restart game method when the restart button is pressed
+    func buttonAction(sender:UIButton!){
+        gameStatus.restartGame(self)
+    }
+    
 }
 

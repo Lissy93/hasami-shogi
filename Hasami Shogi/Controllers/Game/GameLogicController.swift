@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import AVFoundation
+
 
 class GameLogic {
     
@@ -15,7 +17,6 @@ class GameLogic {
     
     let blackChecker = "black_checker.png"
     let whiteChecker = "white_checker.png"
-
     
     // Finds a list of cell cordinates where the user can valid move to
     func findPossibleMoves(cellCordinates: CellCordinates, collectionView: UICollectionView) -> [CellCordinates] {
@@ -115,6 +116,16 @@ class GameLogic {
     }
     
     
+    // Plays a sound when piece is taken
+    func playPieceTakenSound(){
+        if let takenSound = NSBundle.mainBundle().URLForResource("die", withExtension: "mp3") {
+            var mySound: SystemSoundID = 0
+            AudioServicesCreateSystemSoundID(takenSound, &mySound)
+            AudioServicesPlaySystemSound(mySound); // Play sound
+        }
+    }
+    
+    
     // Add an outline to cell to indicate piece has been selected
     func pickUpCell(cell: GameCell){
         cell.layer.borderWidth = 1
@@ -195,6 +206,7 @@ class GameLogic {
                     if let nextCell = collectionView.cellForItemAtIndexPath(NSIndexPath(forRow: nextCordinates.y, inSection: nextCordinates.x)) as! GameCell?{
                         if nextCell.cellStatus == ally.playerNum{
                             removePiece(firstCell) // Destroy Enemy
+                            playPieceTakenSound()
                         }
                     }
                 }

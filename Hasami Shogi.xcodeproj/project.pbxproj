@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C021C4251BD3CBD400EB3B93 /* die.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C021C4231BD3CBD400EB3B93 /* die.mp3 */; settings = {ASSET_TAGS = (); }; };
+		C021C4261BD3CBD400EB3B93 /* restart.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C021C4241BD3CBD400EB3B93 /* restart.mp3 */; settings = {ASSET_TAGS = (); }; };
 		C04637CC1BC3A9430036D28A /* cell_marker.png in Resources */ = {isa = PBXBuildFile; fileRef = C04637CB1BC3A9430036D28A /* cell_marker.png */; settings = {ASSET_TAGS = (); }; };
 		C04E43741BC9061C00BCA93B /* GameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04E43731BC9061C00BCA93B /* GameCell.swift */; settings = {ASSET_TAGS = (); }; };
 		C05CF7B21BD2E20500988398 /* pickup.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C05CF7B01BD2E20500988398 /* pickup.mp3 */; settings = {ASSET_TAGS = (); }; };
@@ -46,6 +48,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C021C4231BD3CBD400EB3B93 /* die.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = die.mp3; path = "Hasami Shogi/Assets/sounds/die.mp3"; sourceTree = "<group>"; };
+		C021C4241BD3CBD400EB3B93 /* restart.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = restart.mp3; path = "Hasami Shogi/Assets/sounds/restart.mp3"; sourceTree = "<group>"; };
 		C04637CB1BC3A9430036D28A /* cell_marker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cell_marker.png; path = "Hasami Shogi/Assets/cell_marker.png"; sourceTree = "<group>"; };
 		C04E43731BC9061C00BCA93B /* GameCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameCell.swift; path = Models/GameCell.swift; sourceTree = "<group>"; };
 		C05CF7B01BD2E20500988398 /* pickup.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = pickup.mp3; path = Assets/sounds/pickup.mp3; sourceTree = "<group>"; };
@@ -151,6 +155,8 @@
 		C0E837FE1BB5829A0052651C = {
 			isa = PBXGroup;
 			children = (
+				C021C4231BD3CBD400EB3B93 /* die.mp3 */,
+				C021C4241BD3CBD400EB3B93 /* restart.mp3 */,
 				C0EC8F6A1BB692B90077BAF9 /* Images */,
 				C0E838091BB5829A0052651C /* Hasami Shogi */,
 				C0E838221BB5829A0052651C /* Hasami ShogiTests */,
@@ -317,12 +323,14 @@
 				C06C7CB71BC1790F0043E18F /* home63.png in Resources */,
 				C0F8E8FC1BBAC6B000A0D2ED /* Main.storyboard in Resources */,
 				C06C7CBA1BC1790F0043E18F /* settings.png in Resources */,
+				C021C4251BD3CBD400EB3B93 /* die.mp3 in Resources */,
 				C06C7CD01BC1AA0D0043E18F /* white_checker.png in Resources */,
 				C0E8381A1BB5829A0052651C /* LaunchScreen.xib in Resources */,
 				C05CF7B51BD2E92400988398 /* win-music.mp3 in Resources */,
 				C06C7CCF1BC1AA0D0043E18F /* black_checker.png in Resources */,
 				C0E838171BB5829A0052651C /* Images.xcassets in Resources */,
 				C06C7CB81BC1790F0043E18F /* league.png in Resources */,
+				C021C4261BD3CBD400EB3B93 /* restart.mp3 in Resources */,
 				C05CF7B31BD2E20500988398 /* putdown.mp3 in Resources */,
 				C04637CC1BC3A9430036D28A /* cell_marker.png in Resources */,
 			);

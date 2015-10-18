@@ -18,6 +18,12 @@ class GameViewController:
     var gameLogic = GameLogic() // Contains all the logic for playing the game
     var gameStatusTexts = [String: UITextField]() // Stores a list of text fields for displaying various game status's
     
+    override func shouldAutorotate() -> Bool {
+        return false
+    }
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -137,9 +143,7 @@ class GameViewController:
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
         
         let newGameAction = UIAlertAction(title: "New Game", style: .Default) { (action) in
-            self.view.subviews.forEach({ $0.removeFromSuperview() })
-            self.viewWillAppear(true)
-            self.viewDidLoad()
+            self.restartGame()
 
         }
         alertController.addAction(newGameAction)
@@ -177,6 +181,16 @@ class GameViewController:
         }
     }
     
+    func buttonAction(sender:UIButton!){
+        restartGame()
+    }
+    
+    
+    func restartGame(){
+        self.view.subviews.forEach({ $0.removeFromSuperview() })
+        self.viewWillAppear(true)
+        self.viewDidLoad()
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

@@ -13,8 +13,10 @@ class GenerateGameView {
     var gameGrid: UICollectionView!
     let gvc: GameViewController
     
-    let playerStatus: UITextField = UITextField (frame:CGRectMake(0, 25, 290, 50));
     let playerPieceCount: UITextField = UITextField (frame:CGRectMake(0, 0, 290, 50))
+    let playerStatus: UITextField = UITextField (frame:CGRectMake(0, 15, 290, 50))
+    let restartGameButton   = UIButton(type: UIButtonType.System) as UIButton
+
 
     
     init(gvc: GameViewController){
@@ -44,7 +46,7 @@ class GenerateGameView {
         playerPieceCount.font = UIFont (name: "HelveticaNeue-UltraLight", size: 16)
         playerPieceCount.text = ""
         gameHeaderView.addSubview(playerPieceCount)
-        
+
         // Create the Next Player View
         let playerTurnView = UIView()
         playerTurnView.translatesAutoresizingMaskIntoConstraints = false
@@ -52,6 +54,12 @@ class GenerateGameView {
         playerStatus.textAlignment = .Center
         playerStatus.font = UIFont (name: "HelveticaNeue-UltraLight", size: 30)
         playerTurnView.addSubview(playerStatus)
+        restartGameButton.frame = CGRectMake(100, 70, 100, 30)
+        restartGameButton.backgroundColor = UIColor(red: 0.85, green: 0.85, blue: 0.95, alpha: 0.8)
+        restartGameButton.setTitle("Restart Game", forState: UIControlState.Normal)
+        restartGameButton.addTarget(self, action: "buttonAction:", forControlEvents: UIControlEvents.TouchUpInside)
+        playerTurnView.addSubview(restartGameButton)
+        
         
         
         // Add the Game Score View and the Game View to main view

@@ -100,6 +100,16 @@ class GameStatusController{
     }
     
     
+    // Plays a sound indicating move is invalid
+    func playInvalidMove(){
+        if let invalidSound = NSBundle.mainBundle().URLForResource("invalid", withExtension: "mp3") {
+            var mySound: SystemSoundID = 0
+            AudioServicesCreateSystemSoundID(invalidSound, &mySound)
+            AudioServicesPlaySystemSound(mySound); // Play sound
+        }
+    }
+    
+    
 
     
     

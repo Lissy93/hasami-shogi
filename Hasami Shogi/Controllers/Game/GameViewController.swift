@@ -73,6 +73,7 @@ class GameViewController:
                     }
                     gameStatus.playPickupSound()
                 }
+                else{gameStatus.playInvalidMove()}
         
 
                 
@@ -102,6 +103,7 @@ class GameViewController:
                         gameStatus.updatePlayerStatusText(gameCollectionView)
                         gameStatus.playPutdownSound()
                     }
+                    else{gameStatus.playInvalidMove()}
                 }
 
             }

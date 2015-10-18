@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C002B1AA1BD45999003E4E5C /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C002B1A91BD45999003E4E5C /* icon.png */; settings = {ASSET_TAGS = (); }; };
 		C021C4251BD3CBD400EB3B93 /* die.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C021C4231BD3CBD400EB3B93 /* die.mp3 */; settings = {ASSET_TAGS = (); }; };
 		C021C4261BD3CBD400EB3B93 /* restart.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C021C4241BD3CBD400EB3B93 /* restart.mp3 */; settings = {ASSET_TAGS = (); }; };
 		C021C4281BD3DF3900EB3B93 /* invalid.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C021C4271BD3DF3900EB3B93 /* invalid.mp3 */; settings = {ASSET_TAGS = (); }; };
@@ -49,6 +50,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C002B1A91BD45999003E4E5C /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = Assets/icon.png; sourceTree = "<group>"; };
 		C021C4231BD3CBD400EB3B93 /* die.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = die.mp3; path = "Hasami Shogi/Assets/sounds/die.mp3"; sourceTree = "<group>"; };
 		C021C4241BD3CBD400EB3B93 /* restart.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = restart.mp3; path = "Hasami Shogi/Assets/sounds/restart.mp3"; sourceTree = "<group>"; };
 		C021C4271BD3DF3900EB3B93 /* invalid.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = invalid.mp3; path = Assets/sounds/invalid.mp3; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 		C0E838091BB5829A0052651C /* Hasami Shogi */ = {
 			isa = PBXGroup;
 			children = (
+				C002B1A91BD45999003E4E5C /* icon.png */,
 				C021C4271BD3DF3900EB3B93 /* invalid.mp3 */,
 				C05CF7B41BD2E92400988398 /* win-music.mp3 */,
 				C05CF7B01BD2E20500988398 /* pickup.mp3 */,
@@ -331,6 +334,7 @@
 				C06C7CD01BC1AA0D0043E18F /* white_checker.png in Resources */,
 				C0E8381A1BB5829A0052651C /* LaunchScreen.xib in Resources */,
 				C05CF7B51BD2E92400988398 /* win-music.mp3 in Resources */,
+				C002B1AA1BD45999003E4E5C /* icon.png in Resources */,
 				C06C7CCF1BC1AA0D0043E18F /* black_checker.png in Resources */,
 				C0E838171BB5829A0052651C /* Images.xcassets in Resources */,
 				C06C7CB81BC1790F0043E18F /* league.png in Resources */,

@@ -34,7 +34,7 @@ class GameViewController:
         ggv.createElements() // Set up the game board
         gameStatus.gameStatusTexts["playerTurn"] = ggv.playerStatus
         gameStatus.gameStatusTexts["playerStatus"] = ggv.playerPieceCount
-        gameStatus.updatePlayerTurnText()
+        updatePlayerTurnText(gameStatus.gameStatusTexts["playerTurn"]!)
         gameStatus.updatePlayerStatusText()
     }
     
@@ -94,7 +94,7 @@ class GameViewController:
                     let found = startPossiblePositions.filter{$0.x == cell.cellCordinates.x && $0.y == cell.cellCordinates.y}.count > 0
                     if  (found){
                         gameLogic.makeMove(confirmedStartCell, toCell: cell, player: gameLogic.getCurrentPlayer(), collectionView: gameCollectionView)
-                        gameStatus.updatePlayerTurnText()
+                        updatePlayerTurnText(gameStatus.gameStatusTexts["playerTurn"]!)
                         let winStatus = gameLogic.checkForWin(gameCollectionView)
                         if winStatus != .empty{
                             gameStatus.gameWon(winStatus, gvc: self)
@@ -139,6 +139,11 @@ class GameViewController:
     // Calls the restart game method when the restart button is pressed
     func buttonAction(sender:UIButton!){
         gameStatus.restartGame(self)
+    }
+    
+    // Updates the text field which indicates which players turn it is
+    func updatePlayerTurnText(playerTurnText: UITextField){
+        playerTurnText.text = gameLogic.getCurrentPlayer().playerName + "'s Turn"
     }
 
     

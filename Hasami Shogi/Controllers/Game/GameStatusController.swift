@@ -12,14 +12,9 @@ import AVFoundation
 
 class GameStatusController{
     
-    let gameLogic =  GameLogic()
-    var gameStatusTexts = [String: UITextField]() // Stores a list of text fields for displaying various game status's
-
+    let gameLogic = GameLogic()
     
-    // Updates the text field which indicates which players turn it is
-    func updatePlayerTurnText(){
-        gameStatusTexts["playerTurn"]!.text = gameLogic.getCurrentPlayer().playerName + "'s Turn"
-    }
+    var gameStatusTexts = [String: UITextField]() // Stores a list of text fields for displaying various game status's
     
     
     // Updates the upper text fieeld indicating how many pieces each player has remaining
@@ -108,9 +103,6 @@ class GameStatusController{
             AudioServicesPlaySystemSound(mySound); // Play sound
         }
     }
-    
-    
-
     
     
     // Restarts the game

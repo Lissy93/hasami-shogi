@@ -274,6 +274,7 @@
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OzG-nK-peF">
                                                     <rect key="frame" x="248" y="4" width="51" height="31"/>
                                                     <animations/>
+                                                    <color key="onTintColor" red="0.42065555169665203" green="0.66089062046961233" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <connections>
                                                         <action selector="fiveInARowChanged:" destination="HQN-Uw-zd3" eventType="valueChanged" id="m31-w0-dHI"/>
                                                     </connections>
@@ -300,6 +301,7 @@
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pks-1J-PEH">
                                                     <rect key="frame" x="248" y="4" width="51" height="31"/>
                                                     <animations/>
+                                                    <color key="onTintColor" red="0.42065555170000002" green="0.66089062050000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <connections>
                                                         <action selector="enableSoundChanged:" destination="HQN-Uw-zd3" eventType="valueChanged" id="JVy-ea-raL"/>
                                                     </connections>

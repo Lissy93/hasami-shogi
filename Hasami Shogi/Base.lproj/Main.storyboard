@@ -215,6 +215,9 @@
                                                         <segment title="Nine"/>
                                                         <segment title="Eighteen"/>
                                                     </segments>
+                                                    <connections>
+                                                        <action selector="startingPiecesChanged:" destination="HQN-Uw-zd3" eventType="valueChanged" id="eqa-e3-Hkt"/>
+                                                    </connections>
                                                 </segmentedControl>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Starting Pieces" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="16M-Kg-1jG">
                                                     <rect key="frame" x="17" y="3" width="137" height="28"/>
@@ -235,6 +238,13 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="8" translatesAutoresizingMaskIntoConstraints="NO" id="xxp-ZZ-XPP">
+                                                    <rect key="frame" x="173" y="7" width="94" height="29"/>
+                                                    <animations/>
+                                                    <connections>
+                                                        <action selector="piecesRemainingToWinChanged:" destination="HQN-Uw-zd3" eventType="valueChanged" id="6Wo-VH-wzt"/>
+                                                    </connections>
+                                                </stepper>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pieces to Win" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vp8-3C-nBc">
                                                     <rect key="frame" x="17" y="7" width="183" height="28"/>
                                                     <animations/>
@@ -242,17 +252,13 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="8" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cup-yz-d2i">
-                                                    <rect key="frame" x="285" y="12" width="11" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cup-yz-d2i">
+                                                    <rect key="frame" x="285" y="11" width="18" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="xxp-ZZ-XPP">
-                                                    <rect key="frame" x="173" y="7" width="94" height="29"/>
-                                                    <animations/>
-                                                </stepper>
                                             </subviews>
                                             <animations/>
                                         </tableViewCellContentView>
@@ -268,6 +274,9 @@
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OzG-nK-peF">
                                                     <rect key="frame" x="248" y="4" width="51" height="31"/>
                                                     <animations/>
+                                                    <connections>
+                                                        <action selector="fiveInARowChanged:" destination="HQN-Uw-zd3" eventType="valueChanged" id="m31-w0-dHI"/>
+                                                    </connections>
                                                 </switch>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Win with 5 in a row" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bZy-nv-gAd">
                                                     <rect key="frame" x="16" y="7" width="162" height="28"/>
@@ -291,6 +300,9 @@
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pks-1J-PEH">
                                                     <rect key="frame" x="248" y="4" width="51" height="31"/>
                                                     <animations/>
+                                                    <connections>
+                                                        <action selector="enableSoundChanged:" destination="HQN-Uw-zd3" eventType="valueChanged" id="JVy-ea-raL"/>
+                                                    </connections>
                                                 </switch>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sound" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tMb-72-OFx">
                                                     <rect key="frame" x="16" y="6" width="162" height="28"/>
@@ -310,7 +322,8 @@
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Settings" image="settings.png" id="Eh9-gQ-EMy"/>
                     <connections>
-                        <outlet property="settingsTableView" destination="KRT-eN-YMf" id="DDm-OP-eTf"/>
+                        <outlet property="piecesRemainingToWinLabel" destination="cup-yz-d2i" id="vRw-Jb-Gzf"/>
+                        <outlet property="piecesToWinStepper" destination="xxp-ZZ-XPP" id="oH4-6G-VnK"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GrE-74-Nsc" userLabel="First Responder" sceneMemberID="firstResponder"/>

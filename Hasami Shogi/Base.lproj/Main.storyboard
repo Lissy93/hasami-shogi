@@ -324,8 +324,11 @@
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Settings" image="settings.png" id="Eh9-gQ-EMy"/>
                     <connections>
+                        <outlet property="enableSoundSwitch" destination="pks-1J-PEH" id="DpY-g9-0UF"/>
+                        <outlet property="numStartingPiecesSlider" destination="Ch4-NY-KI8" id="5oQ-aH-QMJ"/>
                         <outlet property="piecesRemainingToWinLabel" destination="cup-yz-d2i" id="vRw-Jb-Gzf"/>
                         <outlet property="piecesToWinStepper" destination="xxp-ZZ-XPP" id="oH4-6G-VnK"/>
+                        <outlet property="winFiveInRowSwitch" destination="OzG-nK-peF" id="fBu-yg-VvA"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GrE-74-Nsc" userLabel="First Responder" sceneMemberID="firstResponder"/>

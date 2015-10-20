@@ -19,6 +19,9 @@ class GameViewController:
 
     let gameLogic = GameLogic() // Contains all the logic for playing the game
     
+    let defaults = NSUserDefaults.standardUserDefaults() // The user settings
+
+    
     override func shouldAutorotate() -> Bool {
         return false
     }
@@ -120,12 +123,31 @@ class GameViewController:
         cell.setCordinates(CellCordinates(x:indexPath.section, y:indexPath.item))
         cell.backgroundColor = cell.getCellBackgroundCol()
         
+        var twoRows: Bool
+        
+        //Get the number of starting pieces and set
+        if let numStartingPieces: Int = defaults.integerForKey("numOfStartingPieces") {
+            twoRows = numStartingPieces == 18 ? true : false
+        }
+        else{twoRows = false }
+        
+        
         // Place the players pieces
         if(cell.cellCordinates.y == 0){
             gameLogic.placePiece(cell, player: .player1)
         }
         if(cell.cellCordinates.y == 8){
             gameLogic.placePiece(cell, player: .player2)
+        }
+        
+        // If there are 2 starting rows, then place additional pieces
+        if twoRows{
+            if(cell.cellCordinates.y == 1){
+                gameLogic.placePiece(cell, player: .player1)
+            }
+            if(cell.cellCordinates.y == 7){
+                gameLogic.placePiece(cell, player: .player2)
+            }
         }
         
         return cell

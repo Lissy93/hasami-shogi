@@ -244,7 +244,7 @@ class GameLogic {
     
     // Determines if a player has won by number of pieces left on grid
     func checkForWin(collectionView: UICollectionView) -> PlayerNum{
-        let piecesToWin = 1
+        let piecesToWin = defaults.integerForKey("numPiecesRemainingToWin")
         let player1Count = howMangePiecesLeft(.player1, collectionView: collectionView)
         let player2Count = howMangePiecesLeft(.player2, collectionView: collectionView)
         if player1Count <= piecesToWin { return .player2}

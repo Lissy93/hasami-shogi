@@ -56,37 +56,8 @@ class SettingsViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //Get the number of starting pieces and set
-        if let numStartingPiecesDefault: Int = defaults.integerForKey("numOfStartingPieces") {
-            numOfStartingPieces = numStartingPiecesDefault
-        }
-        else{numOfStartingPieces = defaultNumStartingPieces }
-        
-        // Get the numberPiecesRemainingValue and set
-        if let numPiecesRemainingToWinDefault: Int = defaults.integerForKey("numPiecesRemainingToWin") {
-            numPiecesRemainingToWin = numPiecesRemainingToWinDefault
-        }
-        else{numPiecesRemainingToWin = defaultPiecesRemainingToWin }
-        changeLimitOfPiecesToWin()
-        
-        // Get and set Enable win with 5 in a row
-        if let fiveInARowToWinDefault: Bool = defaults.boolForKey("fiveInARowToWin") {
-            fiveInARowToWin = fiveInARowToWinDefault
-        }
-        else{fiveInARowToWin = defaultWinFiveInRow}
-        self.winFiveInRowSwitch.setOn(fiveInARowToWin, animated: true)
 
-        
-        // Get and set Enable Sound
-        if let enableSoundDefault: Bool = defaults.boolForKey("enableSound") {
-            enableSound = enableSoundDefault
-        }
-        else{enableSound = defaultEnableSound }
-        self.enableSoundSwitch.setOn(enableSound, animated: true)
-
-
-
+        initialiseValues()
     }
 
     
@@ -129,6 +100,37 @@ class SettingsViewController: UITableViewController {
         if(numOfStartingPieces == 9 && numPiecesRemainingToWin > 8){
             numPiecesRemainingToWin = 8
         }
+    }
+    
+    
+    func initialiseValues(){
+        //Get the number of starting pieces and set
+        if let numStartingPiecesDefault: Int = defaults.integerForKey("numOfStartingPieces") {
+            numOfStartingPieces = numStartingPiecesDefault
+        }
+        else{numOfStartingPieces = defaultNumStartingPieces }
+        
+        // Get the numberPiecesRemainingValue and set
+        if let numPiecesRemainingToWinDefault: Int = defaults.integerForKey("numPiecesRemainingToWin") {
+            numPiecesRemainingToWin = numPiecesRemainingToWinDefault
+        }
+        else{numPiecesRemainingToWin = defaultPiecesRemainingToWin }
+        changeLimitOfPiecesToWin()
+        
+        // Get and set Enable win with 5 in a row
+        if let fiveInARowToWinDefault: Bool = defaults.boolForKey("fiveInARowToWin") {
+            fiveInARowToWin = fiveInARowToWinDefault
+        }
+        else{fiveInARowToWin = defaultWinFiveInRow}
+        self.winFiveInRowSwitch.setOn(fiveInARowToWin, animated: true)
+        
+        
+        // Get and set Enable Sound
+        if let enableSoundDefault: Bool = defaults.boolForKey("enableSound") {
+            enableSound = enableSoundDefault
+        }
+        else{enableSound = defaultEnableSound }
+        self.enableSoundSwitch.setOn(enableSound, animated: true)
     }
     
     

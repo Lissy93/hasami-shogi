@@ -80,7 +80,7 @@ class GameStatusController{
     }
     
     
-    // Plays a sound when the game is won
+    // Plays a sound when the game i     s won
     func playVictoryMusic(){
         if(defaults.boolForKey("enableSound")){
             if let winSound = NSBundle.mainBundle().URLForResource("win-music", withExtension: "mp3") {

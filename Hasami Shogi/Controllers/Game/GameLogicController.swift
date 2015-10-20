@@ -252,6 +252,50 @@ class GameLogic {
         else{ return .empty}
     }
     
+    func checkForFiveInRow(collectionView: UICollectionView, cell: GameCell) ->PlayerNum{
+        
+        // TODO either implement this method, or kill whoever invented this stupid game rule
+        
+        let startCellCoordinates = cell.cellCordinates
+        
+        func checkLineForFive(theLine: [PlayerNum]) -> PlayerNum{
+            var pl1 = 0, pl2 = 0
+            for square: PlayerNum in theLine{
+                if square == .player1{
+                    pl1++
+                    pl2 = 0
+                }
+                else if square == .player2{
+                    pl2++
+                    pl1 = 0
+                }
+                else{
+                    pl1 = 0
+                    pl2 = 0
+                }
+                if(pl1 >= 5){ return .player1}
+                if(pl2 >= 5){ return .player2}
+            }
+            return .empty
+        }
+        
+        func buildUpCellListVertically(rowNum: Int) ->[PlayerNum]{
+            var results: [PlayerNum] = []
+            func isInRow(gc: GameCell) -> Bool {
+                return gc.cellCordinates.x == rowNum ? true : false
+            }
+            
+            var rowCells = (collectionView.visibleCells() as! [GameCell]).filter(isInRow)
+            rowCells = rowCells.sort({ $0.cellCordinates.y > $1.cellCordinates.y })
+            
+            for rowCell in rowCells { results.append(rowCell.cellStatus) }
+            return results
+        }
+        
+         return checkLineForFive(buildUpCellListVertically(startCellCoordinates.x))
+
+//        return .empty
+    }
         
     // Calls the functions required to actually move a piece and update all attributes
     func makeMove (fromCell: GameCell, toCell: GameCell, player: Player, collectionView: UICollectionView){

@@ -39,6 +39,7 @@ class GameViewController:
         gameStatus.gameStatusTexts["playerStatus"] = ggv.playerPieceCount
         updatePlayerTurnText(gameStatus.gameStatusTexts["playerTurn"]!)
         gameStatus.updatePlayerStatusText()
+        
     }
     
     
@@ -103,6 +104,21 @@ class GameViewController:
                             gameStatus.gameWon(winStatus, gvc: self)
                             gameStatus.playVictoryMusic()
                         }
+                        
+                        var fiveRowToWin = false
+                        if let tryFiveInRowToWin: Bool = defaults.boolForKey("fiveInARowToWin") {
+                            fiveRowToWin = tryFiveInRowToWin
+                        }
+                        
+                        if(fiveRowToWin){
+                            let fiveWinStatus = gameLogic.checkForFiveInRow(gameCollectionView, cell: cell)
+                            if fiveWinStatus != .empty{
+                                gameStatus.gameWon(fiveWinStatus, gvc: self)
+                                gameStatus.playVictoryMusic()
+                            }
+                        }
+                        
+                        
                         gameStatus.updatePlayerStatusText(gameCollectionView)
                         gameStatus.playPutdownSound()
                     }

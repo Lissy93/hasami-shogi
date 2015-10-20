@@ -16,6 +16,8 @@ class GameStatusController{
     
     var gameStatusTexts = [String: UITextField]() // Stores a list of text fields for displaying various game status's
     
+    let defaults = NSUserDefaults.standardUserDefaults()
+
     
     // Updates the upper text fieeld indicating how many pieces each player has remaining
     func updatePlayerStatusText(gameCollectionView: UICollectionView){
@@ -56,30 +58,36 @@ class GameStatusController{
     
     // Plays a sound when a checker is pickec up
     func playPickupSound(){
-        if let pickupSoundUrl = NSBundle.mainBundle().URLForResource("pickup", withExtension: "mp3") {
-            var mySound: SystemSoundID = 0
-            AudioServicesCreateSystemSoundID(pickupSoundUrl, &mySound)
-            AudioServicesPlaySystemSound(mySound); // Play sound
+        if(defaults.boolForKey("enableSound")){
+            if let pickupSoundUrl = NSBundle.mainBundle().URLForResource("pickup", withExtension: "mp3") {
+                var mySound: SystemSoundID = 0
+                AudioServicesCreateSystemSoundID(pickupSoundUrl, &mySound)
+                AudioServicesPlaySystemSound(mySound); // Play sound
+            }
         }
     }
     
     
     // Plays a sound when a checker is put back down
     func playPutdownSound(){
-        if let putdownSound = NSBundle.mainBundle().URLForResource("putdown", withExtension: "mp3") {
-            var mySound: SystemSoundID = 0
-            AudioServicesCreateSystemSoundID(putdownSound, &mySound)
-            AudioServicesPlaySystemSound(mySound); // Play sound
+        if(defaults.boolForKey("enableSound")){
+            if let putdownSound = NSBundle.mainBundle().URLForResource("putdown", withExtension: "mp3") {
+                var mySound: SystemSoundID = 0
+                AudioServicesCreateSystemSoundID(putdownSound, &mySound)
+                AudioServicesPlaySystemSound(mySound); // Play sound
+            }
         }
     }
     
     
     // Plays a sound when the game is won
     func playVictoryMusic(){
-        if let winSound = NSBundle.mainBundle().URLForResource("win-music", withExtension: "mp3") {
-            var mySound: SystemSoundID = 0
-            AudioServicesCreateSystemSoundID(winSound, &mySound)
-            AudioServicesPlaySystemSound(mySound); // Play sound
+        if(defaults.boolForKey("enableSound")){
+            if let winSound = NSBundle.mainBundle().URLForResource("win-music", withExtension: "mp3") {
+                var mySound: SystemSoundID = 0
+                AudioServicesCreateSystemSoundID(winSound, &mySound)
+                AudioServicesPlaySystemSound(mySound); // Play sound
+            }
         }
     }
 
@@ -87,20 +95,24 @@ class GameStatusController{
     
     // Plays a sound when the game is won
     func playRestartSound(){
-        if let restartSound = NSBundle.mainBundle().URLForResource("restart", withExtension: "mp3") {
-            var mySound: SystemSoundID = 0
-            AudioServicesCreateSystemSoundID(restartSound, &mySound)
-            AudioServicesPlaySystemSound(mySound); // Play sound
+        if(defaults.boolForKey("enableSound")){
+            if let restartSound = NSBundle.mainBundle().URLForResource("restart", withExtension: "mp3") {
+                var mySound: SystemSoundID = 0
+                AudioServicesCreateSystemSoundID(restartSound, &mySound)
+                AudioServicesPlaySystemSound(mySound); // Play sound
+            }
         }
     }
     
     
     // Plays a sound indicating move is invalid
     func playInvalidMove(){
-        if let invalidSound = NSBundle.mainBundle().URLForResource("invalid", withExtension: "mp3") {
-            var mySound: SystemSoundID = 0
-            AudioServicesCreateSystemSoundID(invalidSound, &mySound)
-            AudioServicesPlaySystemSound(mySound); // Play sound
+        if(defaults.boolForKey("enableSound")){
+            if let invalidSound = NSBundle.mainBundle().URLForResource("invalid", withExtension: "mp3") {
+                var mySound: SystemSoundID = 0
+                AudioServicesCreateSystemSoundID(invalidSound, &mySound)
+                AudioServicesPlaySystemSound(mySound); // Play sound
+            }
         }
     }
     

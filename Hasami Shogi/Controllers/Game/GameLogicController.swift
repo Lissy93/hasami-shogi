@@ -18,6 +18,9 @@ class GameLogic {
     let blackChecker = "black_checker.png"
     let whiteChecker = "white_checker.png"
     
+    let defaults = NSUserDefaults.standardUserDefaults()
+
+    
     // Finds a list of cell cordinates where the user can valid move to
     func findPossibleMoves(cellCordinates: CellCordinates, collectionView: UICollectionView) -> [CellCordinates] {
 
@@ -118,10 +121,12 @@ class GameLogic {
     
     // Plays a sound when piece is taken
     func playPieceTakenSound(){
-        if let takenSound = NSBundle.mainBundle().URLForResource("die", withExtension: "mp3") {
-            var mySound: SystemSoundID = 0
-            AudioServicesCreateSystemSoundID(takenSound, &mySound)
-            AudioServicesPlaySystemSound(mySound); // Play sound
+        if(defaults.boolForKey("enableSound")){
+            if let takenSound = NSBundle.mainBundle().URLForResource("die", withExtension: "mp3") {
+                var mySound: SystemSoundID = 0
+                AudioServicesCreateSystemSoundID(takenSound, &mySound)
+                AudioServicesPlaySystemSound(mySound); // Play sound
+            }
         }
     }
     

@@ -75,9 +75,9 @@ class GameViewController:
                         let currentCell = gameCollectionView.cellForItemAtIndexPath(NSIndexPath(forRow: eachCellCordinates.y, inSection: eachCellCordinates.x)) as! GameCell
                         gameLogic.putDotInGrid(currentCell)
                     }
-                    gameStatus.playPickupSound()
+                    gameStatus.playSound(.pickup)
                 }
-                else{gameStatus.playInvalidMove()}
+                else{gameStatus.playSound(.invalid)}
         
 
                 
@@ -102,7 +102,7 @@ class GameViewController:
                         let winStatus = gameLogic.checkForWin(gameCollectionView)
                         if winStatus != .empty{
                             gameStatus.gameWon(winStatus, gvc: self)
-                            gameStatus.playVictoryMusic()
+                            gameStatus.playSound(.victory)
                         }
                         
                         var fiveRowToWin = false
@@ -114,15 +114,15 @@ class GameViewController:
                             let fiveWinStatus = gameLogic.checkForFiveInRow(gameCollectionView, cell: cell)
                             if fiveWinStatus != .empty{
                                 gameStatus.gameWon(fiveWinStatus, gvc: self)
-                                gameStatus.playVictoryMusic()
+                                gameStatus.playSound(.victory)
                             }
                         }
                         
                         
                         gameStatus.updatePlayerStatusText(gameCollectionView)
-                        gameStatus.playPutdownSound()
+                        gameStatus.playSound(.putdown)
                     }
-                    else{gameStatus.playInvalidMove()}
+                    else{gameStatus.playSound(.invalid)}
                 }
 
             }

@@ -55,66 +55,17 @@ class GameStatusController{
         gvc.presentViewController(alertController, animated: true) {}
     }
     
-    
-    // Plays a sound when a checker is pickec up
-    func playPickupSound(){
+    // PLay a sound
+    func playSound(sound: Sounds){
         if(defaults.boolForKey("enableSound")){
-            if let pickupSoundUrl = NSBundle.mainBundle().URLForResource("pickup", withExtension: "mp3") {
+            if let soundUrl = NSBundle.mainBundle().URLForResource(sound.rawValue, withExtension: "mp3") {
                 var mySound: SystemSoundID = 0
-                AudioServicesCreateSystemSoundID(pickupSoundUrl, &mySound)
+                AudioServicesCreateSystemSoundID(soundUrl, &mySound)
                 AudioServicesPlaySystemSound(mySound); // Play sound
             }
         }
     }
     
-    
-    // Plays a sound when a checker is put back down
-    func playPutdownSound(){
-        if(defaults.boolForKey("enableSound")){
-            if let putdownSound = NSBundle.mainBundle().URLForResource("putdown", withExtension: "mp3") {
-                var mySound: SystemSoundID = 0
-                AudioServicesCreateSystemSoundID(putdownSound, &mySound)
-                AudioServicesPlaySystemSound(mySound); // Play sound
-            }
-        }
-    }
-    
-    
-    // Plays a sound when the game i     s won
-    func playVictoryMusic(){
-        if(defaults.boolForKey("enableSound")){
-            if let winSound = NSBundle.mainBundle().URLForResource("win-music", withExtension: "mp3") {
-                var mySound: SystemSoundID = 0
-                AudioServicesCreateSystemSoundID(winSound, &mySound)
-                AudioServicesPlaySystemSound(mySound); // Play sound
-            }
-        }
-    }
-
-    
-    
-    // Plays a sound when the game is won
-    func playRestartSound(){
-        if(defaults.boolForKey("enableSound")){
-            if let restartSound = NSBundle.mainBundle().URLForResource("restart", withExtension: "mp3") {
-                var mySound: SystemSoundID = 0
-                AudioServicesCreateSystemSoundID(restartSound, &mySound)
-                AudioServicesPlaySystemSound(mySound); // Play sound
-            }
-        }
-    }
-    
-    
-    // Plays a sound indicating move is invalid
-    func playInvalidMove(){
-        if(defaults.boolForKey("enableSound")){
-            if let invalidSound = NSBundle.mainBundle().URLForResource("invalid", withExtension: "mp3") {
-                var mySound: SystemSoundID = 0
-                AudioServicesCreateSystemSoundID(invalidSound, &mySound)
-                AudioServicesPlaySystemSound(mySound); // Play sound
-            }
-        }
-    }
     
     
     // Restarts the game
@@ -122,8 +73,16 @@ class GameStatusController{
         gvc.view.subviews.forEach({ $0.removeFromSuperview() })
         gvc.viewWillAppear(true)
         gvc.viewDidLoad()
-        playRestartSound()
+        playSound(.restart)
     }
     
 
+}
+
+enum Sounds: String {
+    case pickup =  "pickup"
+    case putdown = "putdown"
+    case victory = "win-music"
+    case restart = "restart"
+    case invalid = "invalid"
 }

@@ -292,9 +292,41 @@ class GameLogic {
             return results
         }
         
-         return checkLineForFive(buildUpCellListVertically(startCellCoordinates.x))
+        func buildUpCellListHorizontally(colNum: Int) ->[PlayerNum]{
 
-//        return .empty
+            var numOfStartingPieces = 9
+            if let numStartingPiecesDefault: Int = defaults.integerForKey("numOfStartingPieces") {
+                numOfStartingPieces = numStartingPiecesDefault
+            }
+            if(numOfStartingPieces == 18 && (colNum == 1 || colNum == 7)){ return [] }
+            if(colNum == 0 || colNum == 8){ return [] }
+            
+            var results: [PlayerNum] = []
+            func isInCol(gc: GameCell) -> Bool {
+                return gc.cellCordinates.y == colNum ? true : false
+            }
+            
+            var colCells = (collectionView.visibleCells() as! [GameCell]).filter(isInCol)
+            colCells = colCells.sort({ $0.cellCordinates.x > $1.cellCordinates.x })
+            
+            for colCell in colCells { results.append(colCell.cellStatus) }
+            return results
+        }
+        
+        func buildUpCellListDiganolly() ->[PlayerNum]{
+            // this is stupid
+            return []
+        }
+        
+        let vertically = checkLineForFive(buildUpCellListVertically(startCellCoordinates.x))
+        let horizontally = checkLineForFive(buildUpCellListHorizontally(startCellCoordinates.y))
+
+        
+        if(vertically != .empty){ return vertically}
+        if(horizontally != .empty){ return horizontally}
+        
+        return .empty
+
     }
         
     // Calls the functions required to actually move a piece and update all attributes

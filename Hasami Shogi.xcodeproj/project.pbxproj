@@ -32,6 +32,7 @@
 		C06C7CD91BC1CB5A0043E18F /* GameStatusController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06C7CD81BC1CB5A0043E18F /* GameStatusController.swift */; settings = {ASSET_TAGS = (); }; };
 		C0C5F8B71BDA54A10069E07B /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C5F8B51BDA54A10069E07B /* User+CoreDataProperties.swift */; settings = {ASSET_TAGS = (); }; };
 		C0C5F8B81BDA54A10069E07B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C5F8B61BDA54A10069E07B /* User.swift */; settings = {ASSET_TAGS = (); }; };
+		C0C5F8BA1BDAC0CB0069E07B /* defaultpic.png in Resources */ = {isa = PBXBuildFile; fileRef = C0C5F8B91BDAC0CB0069E07B /* defaultpic.png */; settings = {ASSET_TAGS = (); }; };
 		C0E8380D1BB5829A0052651C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E8380C1BB5829A0052651C /* AppDelegate.swift */; };
 		C0E838101BB5829A0052651C /* Hasami_Shogi.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C0E8380E1BB5829A0052651C /* Hasami_Shogi.xcdatamodeld */; };
 		C0E838121BB5829A0052651C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E838111BB5829A0052651C /* ViewController.swift */; };
@@ -78,6 +79,7 @@
 		C06C7CD81BC1CB5A0043E18F /* GameStatusController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameStatusController.swift; path = Controllers/Game/GameStatusController.swift; sourceTree = "<group>"; };
 		C0C5F8B51BDA54A10069E07B /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		C0C5F8B61BDA54A10069E07B /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		C0C5F8B91BDAC0CB0069E07B /* defaultpic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = defaultpic.png; path = "Hasami Shogi/Assets/defaultpic.png"; sourceTree = "<group>"; };
 		C0E838071BB5829A0052651C /* Hasami Shogi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hasami Shogi.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0E8380B1BB5829A0052651C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C0E8380C1BB5829A0052651C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Helpers/AppDelegate.swift; sourceTree = "<group>"; };
@@ -236,6 +238,7 @@
 		C0EC8F6A1BB692B90077BAF9 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				C0C5F8B91BDAC0CB0069E07B /* defaultpic.png */,
 				C04637CB1BC3A9430036D28A /* cell_marker.png */,
 				C06C7CCD1BC1AA0D0043E18F /* black_checker.png */,
 				C06C7CCE1BC1AA0D0043E18F /* white_checker.png */,
@@ -337,6 +340,7 @@
 				C06C7CB51BC1790F0043E18F /* game.png in Resources */,
 				C06C7CB61BC1790F0043E18F /* home.png in Resources */,
 				C06C7CB71BC1790F0043E18F /* home63.png in Resources */,
+				C0C5F8BA1BDAC0CB0069E07B /* defaultpic.png in Resources */,
 				C0F8E8FC1BBAC6B000A0D2ED /* Main.storyboard in Resources */,
 				C06C7CBA1BC1790F0043E18F /* settings.png in Resources */,
 				C021C4251BD3CBD400EB3B93 /* die.mp3 in Resources */,

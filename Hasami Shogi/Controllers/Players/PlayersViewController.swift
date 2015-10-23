@@ -114,15 +114,24 @@ class PlayersViewController:  UIViewController, UITableViewDataSource {
     func tableView(tableView: UITableView,
         cellForRowAtIndexPath
         indexPath: NSIndexPath) -> UITableViewCell {
+//            
+//            let cell = tableView.dequeueReusableCellWithIdentifier("Cell")
+//            
+//            let player = savedUsers[indexPath.row]
+//
+//            cell!.textLabel!.text = player.valueForKey("name") as? String
+//            cell!.imageView!.image = UIImage(named: "defaultpic")
+//            return cell!
             
-            let cell =
-            tableView.dequeueReusableCellWithIdentifier("Cell")
-            
+
+            let cell = tableView.dequeueReusableCellWithIdentifier("Cell")
             let player = savedUsers[indexPath.row]
-            
-            cell!.textLabel!.text =
-                player.valueForKey("name") as? String
+            cell!.textLabel!.text = player.valueForKey("name") as? String
+            let image : UIImage = UIImage(named: "defaultpic")!
+            print("The loaded image: \(image)")
+            cell!.imageView!.image = image
             
             return cell!
+            
     }
 }

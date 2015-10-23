@@ -15,6 +15,8 @@ class GameViewController:
     UICollectionViewDataSource {
     
     
+    let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+    
     let gameStatus = GameStatusController() // Contains methods for updating all status information
 
     let gameLogic = GameLogic() // Contains all the logic for playing the game
@@ -32,6 +34,8 @@ class GameViewController:
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        gameStatus.showStartDialog(self)
         
         let ggv: GenerateGameView = GenerateGameView(gvc: self) 
         ggv.createElements() // Set up the game board

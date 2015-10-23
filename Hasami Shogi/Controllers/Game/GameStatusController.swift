@@ -76,6 +76,27 @@ class GameStatusController{
         playSound(.restart)
     }
     
+    
+    func showStartDialog(gvc: GameViewController){
+        
+//        let title = "New Game"
+//        let message = "Select Players"
+//        
+//        let alertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+//        
+//        let newGameAction = UIAlertAction(title: "New Game", style: .Default) { (action) in
+//            self.restartGame(gvc)
+//            
+//        }
+//        alertController.addAction(newGameAction)
+//        
+//        let highScoresAction = UIAlertAction(title: "High Scoress", style: .Default) { (action) in
+//            gvc.tabBarController?.selectedIndex = 2
+//        }
+//        alertController.addAction(highScoresAction)
+//        
+//        gvc.presentViewController(alertController, animated: true) {}
+    }
 
 }
 

@@ -17,6 +17,7 @@
 		C05CF7B21BD2E20500988398 /* pickup.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C05CF7B01BD2E20500988398 /* pickup.mp3 */; settings = {ASSET_TAGS = (); }; };
 		C05CF7B31BD2E20500988398 /* putdown.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C05CF7B11BD2E20500988398 /* putdown.mp3 */; settings = {ASSET_TAGS = (); }; };
 		C05CF7B51BD2E92400988398 /* win-music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C05CF7B41BD2E92400988398 /* win-music.mp3 */; settings = {ASSET_TAGS = (); }; };
+		C06378A91BD8CCE60051CD7C /* PlayersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06378A81BD8CCE60051CD7C /* PlayersViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		C06C7CB51BC1790F0043E18F /* game.png in Resources */ = {isa = PBXBuildFile; fileRef = C06C7CAF1BC1790F0043E18F /* game.png */; settings = {ASSET_TAGS = (); }; };
 		C06C7CB61BC1790F0043E18F /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = C06C7CB01BC1790F0043E18F /* home.png */; settings = {ASSET_TAGS = (); }; };
 		C06C7CB71BC1790F0043E18F /* home63.png in Resources */ = {isa = PBXBuildFile; fileRef = C06C7CB11BC1790F0043E18F /* home63.png */; settings = {ASSET_TAGS = (); }; };
@@ -29,6 +30,8 @@
 		C06C7CD41BC1B3690043E18F /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06C7CD31BC1B3690043E18F /* Player.swift */; settings = {ASSET_TAGS = (); }; };
 		C06C7CD61BC1C2BB0043E18F /* GameLogicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06C7CD51BC1C2BB0043E18F /* GameLogicController.swift */; settings = {ASSET_TAGS = (); }; };
 		C06C7CD91BC1CB5A0043E18F /* GameStatusController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06C7CD81BC1CB5A0043E18F /* GameStatusController.swift */; settings = {ASSET_TAGS = (); }; };
+		C0C5F8B71BDA54A10069E07B /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C5F8B51BDA54A10069E07B /* User+CoreDataProperties.swift */; settings = {ASSET_TAGS = (); }; };
+		C0C5F8B81BDA54A10069E07B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C5F8B61BDA54A10069E07B /* User.swift */; settings = {ASSET_TAGS = (); }; };
 		C0E8380D1BB5829A0052651C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E8380C1BB5829A0052651C /* AppDelegate.swift */; };
 		C0E838101BB5829A0052651C /* Hasami_Shogi.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C0E8380E1BB5829A0052651C /* Hasami_Shogi.xcdatamodeld */; };
 		C0E838121BB5829A0052651C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E838111BB5829A0052651C /* ViewController.swift */; };
@@ -37,7 +40,6 @@
 		C0E838261BB5829A0052651C /* Hasami_ShogiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E838251BB5829A0052651C /* Hasami_ShogiTests.swift */; };
 		C0EC8F981BB6CACE0077BAF9 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EC8F971BB6CACE0077BAF9 /* GameViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		C0F8E8FC1BBAC6B000A0D2ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0F8E8FA1BBAC6B000A0D2ED /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
-		C0F8E8FE1BBAD89500A0D2ED /* PlayersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F8E8FD1BBAD89500A0D2ED /* PlayersViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,7 @@
 		C05CF7B01BD2E20500988398 /* pickup.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = pickup.mp3; path = Assets/sounds/pickup.mp3; sourceTree = "<group>"; };
 		C05CF7B11BD2E20500988398 /* putdown.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = putdown.mp3; path = Assets/sounds/putdown.mp3; sourceTree = "<group>"; };
 		C05CF7B41BD2E92400988398 /* win-music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "win-music.mp3"; path = "Assets/sounds/win-music.mp3"; sourceTree = "<group>"; };
+		C06378A81BD8CCE60051CD7C /* PlayersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlayersViewController.swift; path = Controllers/Players/PlayersViewController.swift; sourceTree = "<group>"; };
 		C06C7CAF1BC1790F0043E18F /* game.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = game.png; path = "Hasami Shogi/Assets/game.png"; sourceTree = "<group>"; };
 		C06C7CB01BC1790F0043E18F /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = home.png; path = "Hasami Shogi/Assets/home.png"; sourceTree = "<group>"; };
 		C06C7CB11BC1790F0043E18F /* home63.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = home63.png; path = "Hasami Shogi/Assets/home63.png"; sourceTree = "<group>"; };
@@ -73,6 +76,8 @@
 		C06C7CD31BC1B3690043E18F /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Player.swift; path = Models/Player.swift; sourceTree = "<group>"; };
 		C06C7CD51BC1C2BB0043E18F /* GameLogicController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameLogicController.swift; path = Controllers/Game/GameLogicController.swift; sourceTree = "<group>"; };
 		C06C7CD81BC1CB5A0043E18F /* GameStatusController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameStatusController.swift; path = Controllers/Game/GameStatusController.swift; sourceTree = "<group>"; };
+		C0C5F8B51BDA54A10069E07B /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C0C5F8B61BDA54A10069E07B /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C0E838071BB5829A0052651C /* Hasami Shogi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hasami Shogi.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0E8380B1BB5829A0052651C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C0E8380C1BB5829A0052651C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Helpers/AppDelegate.swift; sourceTree = "<group>"; };
@@ -85,7 +90,6 @@
 		C0E838251BB5829A0052651C /* Hasami_ShogiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hasami_ShogiTests.swift; sourceTree = "<group>"; };
 		C0EC8F971BB6CACE0077BAF9 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameViewController.swift; path = Controllers/Game/GameViewController.swift; sourceTree = "<group>"; };
 		C0F8E8FB1BBAC6B000A0D2ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		C0F8E8FD1BBAD89500A0D2ED /* PlayersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlayersViewController.swift; path = Controllers/PlayersViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,9 +130,9 @@
 			isa = PBXGroup;
 			children = (
 				C0E838111BB5829A0052651C /* ViewController.swift */,
-				C0F8E8FD1BBAD89500A0D2ED /* PlayersViewController.swift */,
 				C06C7CD71BC1C9D80043E18F /* Game */,
 				C0549C591BD5680200AE381F /* SettingsViewController.swift */,
+				C06378A81BD8CCE60051CD7C /* PlayersViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -162,6 +166,8 @@
 		C0E837FE1BB5829A0052651C = {
 			isa = PBXGroup;
 			children = (
+				C0C5F8B51BDA54A10069E07B /* User+CoreDataProperties.swift */,
+				C0C5F8B61BDA54A10069E07B /* User.swift */,
 				C021C4231BD3CBD400EB3B93 /* die.mp3 */,
 				C021C4241BD3CBD400EB3B93 /* restart.mp3 */,
 				C0EC8F6A1BB692B90077BAF9 /* Images */,
@@ -361,7 +367,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0C5F8B81BDA54A10069E07B /* User.swift in Sources */,
+				C06378A91BD8CCE60051CD7C /* PlayersViewController.swift in Sources */,
 				C06C7CD61BC1C2BB0043E18F /* GameLogicController.swift in Sources */,
+				C0C5F8B71BDA54A10069E07B /* User+CoreDataProperties.swift in Sources */,
 				C0EC8F981BB6CACE0077BAF9 /* GameViewController.swift in Sources */,
 				C0549C5A1BD5680200AE381F /* SettingsViewController.swift in Sources */,
 				C0E838121BB5829A0052651C /* ViewController.swift in Sources */,
@@ -369,7 +378,6 @@
 				C06C7CD21BC1B2220043E18F /* GenerateGameView.swift in Sources */,
 				C04E43741BC9061C00BCA93B /* GameCell.swift in Sources */,
 				C06C7CD41BC1B3690043E18F /* Player.swift in Sources */,
-				C0F8E8FE1BBAD89500A0D2ED /* PlayersViewController.swift in Sources */,
 				C0E838101BB5829A0052651C /* Hasami_Shogi.xcdatamodeld in Sources */,
 				C06C7CD91BC1CB5A0043E18F /* GameStatusController.swift in Sources */,
 			);
@@ -498,9 +506,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "Hasami Shogi/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -508,6 +518,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "Hasami Shogi/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

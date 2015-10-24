@@ -16,6 +16,7 @@ class PlayersViewController:  UIViewController, UITableViewDataSource, UITableVi
     // Properties
     var players = [NSManagedObject]()
     var savedUsers =  NSArray()
+    var nextPlayer = 1
     
     
     override func viewDidLoad() {
@@ -131,7 +132,8 @@ class PlayersViewController:  UIViewController, UITableViewDataSource, UITableVi
             cell!.imageView!.image = image
             
             if let playerSelected = player.valueForKey("selected"){
-                if(playerSelected as! Int != 0){ selectCell(cell!) }
+                let truePlayerSelected = playerSelected as! Int
+                if(truePlayerSelected != 0){ selectCell(cell!, playerNum: truePlayerSelected) }
                 else{ deselectCell(cell!)}
             }
             else{ deselectCell(cell!)}
@@ -140,41 +142,34 @@ class PlayersViewController:  UIViewController, UITableViewDataSource, UITableVi
     }
 
     
-    func selectCell(cell: UITableViewCell){
-        print(cell.tag)
-        let imageName = "tick";
+    func selectCell(cell: UITableViewCell, playerNum: Int){
+        let imageName = playerNum == 1 ? "tick_player1" : "tick_player2"
         let selectedImage: UIImageView = UIImageView(image: UIImage(named: imageName));
         cell.accessoryView = selectedImage;
+        cell.imageView?.tag = playerNum
     }
     
     func deselectCell(cell: UITableViewCell){
         let image: UIImageView = UIImageView();
         cell.accessoryView = image;
-    }
-    
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
-        let cell = self.tableView.cellForRowAtIndexPath(indexPath)
-
-        updateUserAsSelected(cell!.tag)
-        self.tableView.reloadData()
+        cell.imageView?.tag = 0
     }
     
     
-    func updateUserAsSelected(id: Int) {
+    func updateUserAsSelected(id: Int, newVal: Int) {
         let appDelegate =
         UIApplication.sharedApplication().delegate as! AppDelegate
         
         let managedContext = appDelegate.managedObjectContext
         
         let request = NSFetchRequest(entityName: "User")
-//        request.returnsObjectsAsFaults = false
         request.predicate = NSPredicate(format: "id == %i", id)
         
         do {
             if let results = try appDelegate.managedObjectContext!.executeFetchRequest(request) as? [NSManagedObject] {
                 if results.count != 0{
                     let managedObject = results[0]
-                    managedObject.setValue(1, forKey: "selected")
+                    managedObject.setValue(newVal, forKey: "selected")
                     do {
                         try managedContext!.save()
                     }
@@ -193,6 +188,37 @@ class PlayersViewController:  UIViewController, UITableViewDataSource, UITableVi
         
         
     }
+    
+    
+    // Function which returns an int for whatever is the next player to make selection
+    func getNextPlayerSelection() -> Int{
+        if nextPlayer == 1{ nextPlayer = 2; return 2}
+        else  {nextPlayer = 1; return 1}
+    }
+    
+    // Function that removes the last seletion from a given plater
+    func removeLastSelectionFromPlayer(playerNum: Int){
+        for row in 0..<tableView.numberOfRowsInSection(0){
+            let cell = self.tableView.cellForRowAtIndexPath(NSIndexPath(forRow: row, inSection: 0))
+            if(cell?.imageView?.tag == playerNum){
+                deselectCell(cell!)
+                updateUserAsSelected(cell!.tag, newVal: 0)
+            }
+        }
+    }
+    
+    
+    // When cell is pressed
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
+        let cell = self.tableView.cellForRowAtIndexPath(indexPath)
+        let currentUserNum = getNextPlayerSelection()   // Which person is pressing cell
+        cell?.imageView!.tag = currentUserNum           // Add in an image
+        removeLastSelectionFromPlayer(currentUserNum)   // Remove tick from previous cell
+        updateUserAsSelected(cell!.tag, newVal: currentUserNum) // Update user record in database
+        self.tableView.reloadData()                     // Reload the table
+    }
+
+    
     
     
 }

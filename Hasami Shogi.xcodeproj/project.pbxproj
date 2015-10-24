@@ -33,7 +33,8 @@
 		C0C5F8B71BDA54A10069E07B /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C5F8B51BDA54A10069E07B /* User+CoreDataProperties.swift */; settings = {ASSET_TAGS = (); }; };
 		C0C5F8B81BDA54A10069E07B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C5F8B61BDA54A10069E07B /* User.swift */; settings = {ASSET_TAGS = (); }; };
 		C0C5F8BA1BDAC0CB0069E07B /* defaultpic.png in Resources */ = {isa = PBXBuildFile; fileRef = C0C5F8B91BDAC0CB0069E07B /* defaultpic.png */; settings = {ASSET_TAGS = (); }; };
-		C0C5F8BC1BDACC3D0069E07B /* tick.png in Resources */ = {isa = PBXBuildFile; fileRef = C0C5F8BB1BDACC3D0069E07B /* tick.png */; settings = {ASSET_TAGS = (); }; };
+		C0C5F8C31BDBADA40069E07B /* tick_player1.png in Resources */ = {isa = PBXBuildFile; fileRef = C0C5F8C11BDBADA40069E07B /* tick_player1.png */; settings = {ASSET_TAGS = (); }; };
+		C0C5F8C41BDBADA40069E07B /* tick_player2.png in Resources */ = {isa = PBXBuildFile; fileRef = C0C5F8C21BDBADA40069E07B /* tick_player2.png */; settings = {ASSET_TAGS = (); }; };
 		C0E8380D1BB5829A0052651C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E8380C1BB5829A0052651C /* AppDelegate.swift */; };
 		C0E838101BB5829A0052651C /* Hasami_Shogi.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C0E8380E1BB5829A0052651C /* Hasami_Shogi.xcdatamodeld */; };
 		C0E838121BB5829A0052651C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E838111BB5829A0052651C /* ViewController.swift */; };
@@ -81,7 +82,8 @@
 		C0C5F8B51BDA54A10069E07B /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		C0C5F8B61BDA54A10069E07B /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C0C5F8B91BDAC0CB0069E07B /* defaultpic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = defaultpic.png; path = "Hasami Shogi/Assets/defaultpic.png"; sourceTree = "<group>"; };
-		C0C5F8BB1BDACC3D0069E07B /* tick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tick.png; path = "Hasami Shogi/Assets/tick.png"; sourceTree = "<group>"; };
+		C0C5F8C11BDBADA40069E07B /* tick_player1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tick_player1.png; path = "Hasami Shogi/Assets/tick_player1.png"; sourceTree = "<group>"; };
+		C0C5F8C21BDBADA40069E07B /* tick_player2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tick_player2.png; path = "Hasami Shogi/Assets/tick_player2.png"; sourceTree = "<group>"; };
 		C0E838071BB5829A0052651C /* Hasami Shogi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hasami Shogi.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0E8380B1BB5829A0052651C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C0E8380C1BB5829A0052651C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Helpers/AppDelegate.swift; sourceTree = "<group>"; };
@@ -238,9 +240,10 @@
 		C0EC8F6A1BB692B90077BAF9 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				C0C5F8C11BDBADA40069E07B /* tick_player1.png */,
+				C0C5F8C21BDBADA40069E07B /* tick_player2.png */,
 				C021C4231BD3CBD400EB3B93 /* die.mp3 */,
 				C021C4241BD3CBD400EB3B93 /* restart.mp3 */,
-				C0C5F8BB1BDACC3D0069E07B /* tick.png */,
 				C0C5F8B91BDAC0CB0069E07B /* defaultpic.png */,
 				C04637CB1BC3A9430036D28A /* cell_marker.png */,
 				C06C7CCD1BC1AA0D0043E18F /* black_checker.png */,
@@ -343,12 +346,13 @@
 				C06C7CB51BC1790F0043E18F /* game.png in Resources */,
 				C06C7CB61BC1790F0043E18F /* home.png in Resources */,
 				C06C7CB71BC1790F0043E18F /* home63.png in Resources */,
+				C0C5F8C31BDBADA40069E07B /* tick_player1.png in Resources */,
 				C0C5F8BA1BDAC0CB0069E07B /* defaultpic.png in Resources */,
 				C0F8E8FC1BBAC6B000A0D2ED /* Main.storyboard in Resources */,
 				C06C7CBA1BC1790F0043E18F /* settings.png in Resources */,
 				C021C4251BD3CBD400EB3B93 /* die.mp3 in Resources */,
 				C06C7CD01BC1AA0D0043E18F /* white_checker.png in Resources */,
-				C0C5F8BC1BDACC3D0069E07B /* tick.png in Resources */,
+				C0C5F8C41BDBADA40069E07B /* tick_player2.png in Resources */,
 				C0E8381A1BB5829A0052651C /* LaunchScreen.xib in Resources */,
 				C05CF7B51BD2E92400988398 /* win-music.mp3 in Resources */,
 				C002B1AC1BD45D6F003E4E5C /* icon.png in Resources */,

@@ -211,11 +211,13 @@ class PlayersViewController:  UIViewController, UITableViewDataSource, UITableVi
     // When cell is pressed
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
         let cell = self.tableView.cellForRowAtIndexPath(indexPath)
-        let currentUserNum = getNextPlayerSelection()   // Which person is pressing cell
-        cell?.imageView!.tag = currentUserNum           // Add in an image
-        removeLastSelectionFromPlayer(currentUserNum)   // Remove tick from previous cell
-        updateUserAsSelected(cell!.tag, newVal: currentUserNum) // Update user record in database
-        self.tableView.reloadData()                     // Reload the table
+        if cell?.imageView!.tag != nextPlayer || cell?.imageView!.tag == 0{
+            let currentUserNum = getNextPlayerSelection()   // Which person is pressing cell
+            cell?.imageView!.tag = currentUserNum           // Add in an image
+            removeLastSelectionFromPlayer(currentUserNum)   // Remove tick from previous cell
+            updateUserAsSelected(cell!.tag, newVal: currentUserNum) // Update user record in database
+            self.tableView.reloadData()                     // Reload the table
+        }
     }
 
     

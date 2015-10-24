@@ -14,8 +14,8 @@ class UserManagement{
 
     init(){
         if loadUsers().count < 2 {
-            savePlayer("Player 1", num: 1)
-            savePlayer("Player 2", num: 2)
+            savePlayer("Player 1", num: 1, uniqueId: 1)
+            savePlayer("Player 2", num: 2, uniqueId: 2)
         }
     }
     
@@ -38,11 +38,10 @@ class UserManagement{
         return playerObject
     }
 
-    
-    // Saves a specified player into the database
-    func savePlayer(name: String, num: Int) -> NSManagedObject {
+    // Saved a specified player into the database
+    func savePlayer(name: String, num: Int, uniqueId: Int) -> NSManagedObject {
         let appDelegate =
-            UIApplication.sharedApplication().delegate as! AppDelegate
+        UIApplication.sharedApplication().delegate as! AppDelegate
         let managedContext = appDelegate.managedObjectContext
         
         let entity =  NSEntityDescription.entityForName("User",
@@ -56,16 +55,22 @@ class UserManagement{
         player.setValue("", forKey: "picture")
         player.setValue(0, forKey: "score")
         player.setValue(num, forKey: "selected")
-        player.setValue(Int(round(Double(NSDate().timeIntervalSince1970.description)!)), forKey: "id")
+        player.setValue(uniqueId, forKey: "id")
         
         
         do {
             try managedContext!.save()
-                loadUsers()
+            loadUsers()
         } catch let error as NSError  {
             print("Could not save \(error), \(error.userInfo)")
         }
         return player
+    }
+    
+    // Saves a specified player into the database
+    func savePlayer(name: String, num: Int) -> NSManagedObject {
+        let time: Int = Int(round(Double(NSDate().timeIntervalSince1970.description)!))
+        return savePlayer(name, num: num, uniqueId: time)
     }
     
     

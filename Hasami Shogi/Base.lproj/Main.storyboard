@@ -172,7 +172,6 @@
         <!--Players View Controller-->
         <scene sceneID="25e-I5-kNb">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="U9Z-Hr-oWA" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="6Yg-vp-IGa" customClass="PlayersViewController" customModule="Hasami_Shogi" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="X4n-FS-v9k"/>
@@ -207,6 +206,7 @@
                         <outlet property="tableView" destination="QQn-hn-m4y" id="PnV-xo-Yck"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U9Z-Hr-oWA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1846" y="-327"/>
         </scene>

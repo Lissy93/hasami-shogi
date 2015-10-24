@@ -22,7 +22,7 @@ class GameStatusController{
     // Updates the upper text fieeld indicating how many pieces each player has remaining
     func updatePlayerStatusText(gameCollectionView: UICollectionView){
         gameStatusTexts["playerStatus"]!.text =
-        "\(gameLogic.player1.playerName)': \(gameLogic.howMangePiecesLeft(.player1, collectionView: gameCollectionView)) \t\t\t\t\t \(gameLogic.player2.playerName): \(gameLogic.howMangePiecesLeft(.player2, collectionView: gameCollectionView))"
+        "\(gameLogic.player1.playerName)': \(gameLogic.howMangePiecesLeft(.player1, collectionView: gameCollectionView)) \t\t \(gameLogic.player2.playerName): \(gameLogic.howMangePiecesLeft(.player2, collectionView: gameCollectionView))"
     }
     
     
@@ -31,7 +31,7 @@ class GameStatusController{
         var numPieces: Int = 9
         if(defaults.integerForKey("numOfStartingPieces") == 18){numPieces = 18}
         gameStatusTexts["playerStatus"]!.text =
-        "\(gameLogic.player1.playerName): \(numPieces) \t \(gameLogic.player2.playerName): \(numPieces)"
+        "\(gameLogic.player1.playerName): \(numPieces) \t\t \(gameLogic.player2.playerName): \(numPieces)"
     }
     
 

@@ -98,7 +98,11 @@ class SettingsViewController: UITableViewController {
     func changeLimitOfPiecesToWin(){
         piecesToWinStepper.maximumValue = (numOfStartingPieces == 9) ? 8 : 17
         if(numOfStartingPieces == 9 && numPiecesRemainingToWin > 8){
-            numPiecesRemainingToWin = 8
+            numPiecesRemainingToWin = Int(round(Double(numPiecesRemainingToWin/2))) 
+        }
+        if(self.piecesRemainingToWinLabel.text == "0"){
+            if(numPiecesRemainingToWin == 0){numPiecesRemainingToWin = defaultPiecesRemainingToWin}
+            self.piecesRemainingToWinLabel.text = String(numPiecesRemainingToWin)
         }
     }
     
@@ -115,25 +119,24 @@ class SettingsViewController: UITableViewController {
             numPiecesRemainingToWin = numPiecesRemainingToWinDefault
         }
         else{numPiecesRemainingToWin = defaultPiecesRemainingToWin }
+        
         changeLimitOfPiecesToWin()
         
         // Get and set Enable win with 5 in a row
-        if let fiveInARowToWinDefault: Bool = defaults.boolForKey("fiveInARowToWin") {
-            fiveInARowToWin = fiveInARowToWinDefault
+        if defaults.boolForKey("fiveInARowToWin") {
+            fiveInARowToWin = defaults.boolForKey("fiveInARowToWin")
         }
         else{fiveInARowToWin = defaultWinFiveInRow}
         self.winFiveInRowSwitch.setOn(fiveInARowToWin, animated: true)
         
         
         // Get and set Enable Sound
-        if let enableSoundDefault: Bool = defaults.boolForKey("enableSound") {
-            enableSound = enableSoundDefault
+        if defaults.boolForKey("enableSound") {
+            enableSound = defaults.boolForKey("enableSound")
         }
         else{enableSound = defaultEnableSound }
         self.enableSoundSwitch.setOn(enableSound, animated: true)
     }
-    
-    
     
     
 }

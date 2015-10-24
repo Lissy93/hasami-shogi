@@ -14,6 +14,8 @@
 		C039360A1BDC05AC00A33405 /* UserManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03936091BDC05AC00A33405 /* UserManagement.swift */; settings = {ASSET_TAGS = (); }; };
 		C04637CC1BC3A9430036D28A /* cell_marker.png in Resources */ = {isa = PBXBuildFile; fileRef = C04637CB1BC3A9430036D28A /* cell_marker.png */; settings = {ASSET_TAGS = (); }; };
 		C04E43741BC9061C00BCA93B /* GameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04E43731BC9061C00BCA93B /* GameCell.swift */; settings = {ASSET_TAGS = (); }; };
+		C053FA4D1BDC369C007DD7E3 /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C053FA4C1BDC369C007DD7E3 /* ScoreViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		C053FA4F1BDC36B2007DD7E3 /* ScoreLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = C053FA4E1BDC36B2007DD7E3 /* ScoreLogic.swift */; settings = {ASSET_TAGS = (); }; };
 		C0549C5A1BD5680200AE381F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0549C591BD5680200AE381F /* SettingsViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		C05CF7B21BD2E20500988398 /* pickup.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C05CF7B01BD2E20500988398 /* pickup.mp3 */; settings = {ASSET_TAGS = (); }; };
 		C05CF7B31BD2E20500988398 /* putdown.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C05CF7B11BD2E20500988398 /* putdown.mp3 */; settings = {ASSET_TAGS = (); }; };
@@ -64,6 +66,8 @@
 		C03936091BDC05AC00A33405 /* UserManagement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserManagement.swift; path = Controllers/Players/UserManagement.swift; sourceTree = "<group>"; };
 		C04637CB1BC3A9430036D28A /* cell_marker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cell_marker.png; path = "Hasami Shogi/Assets/cell_marker.png"; sourceTree = "<group>"; };
 		C04E43731BC9061C00BCA93B /* GameCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameCell.swift; path = Models/GameCell.swift; sourceTree = "<group>"; };
+		C053FA4C1BDC369C007DD7E3 /* ScoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScoreViewController.swift; path = Controllers/Scores/ScoreViewController.swift; sourceTree = "<group>"; };
+		C053FA4E1BDC36B2007DD7E3 /* ScoreLogic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScoreLogic.swift; path = Controllers/Scores/ScoreLogic.swift; sourceTree = "<group>"; };
 		C0549C591BD5680200AE381F /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = Controllers/Settings/SettingsViewController.swift; sourceTree = "<group>"; };
 		C05CF7B01BD2E20500988398 /* pickup.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = pickup.mp3; path = "Hasami Shogi/Assets/sounds/pickup.mp3"; sourceTree = "<group>"; };
 		C05CF7B11BD2E20500988398 /* putdown.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = putdown.mp3; path = "Hasami Shogi/Assets/sounds/putdown.mp3"; sourceTree = "<group>"; };
@@ -142,6 +146,8 @@
 				C0549C591BD5680200AE381F /* SettingsViewController.swift */,
 				C06378A81BD8CCE60051CD7C /* PlayersViewController.swift */,
 				C03936091BDC05AC00A33405 /* UserManagement.swift */,
+				C053FA4C1BDC369C007DD7E3 /* ScoreViewController.swift */,
+				C053FA4E1BDC36B2007DD7E3 /* ScoreLogic.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -384,8 +390,10 @@
 			files = (
 				C0C5F8B81BDA54A10069E07B /* User.swift in Sources */,
 				C06378A91BD8CCE60051CD7C /* PlayersViewController.swift in Sources */,
+				C053FA4D1BDC369C007DD7E3 /* ScoreViewController.swift in Sources */,
 				C06C7CD61BC1C2BB0043E18F /* GameLogicController.swift in Sources */,
 				C039360A1BDC05AC00A33405 /* UserManagement.swift in Sources */,
+				C053FA4F1BDC36B2007DD7E3 /* ScoreLogic.swift in Sources */,
 				C0C5F8B71BDA54A10069E07B /* User+CoreDataProperties.swift in Sources */,
 				C0EC8F981BB6CACE0077BAF9 /* GameViewController.swift in Sources */,
 				C0549C5A1BD5680200AE381F /* SettingsViewController.swift in Sources */,

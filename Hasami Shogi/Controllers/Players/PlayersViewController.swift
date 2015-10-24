@@ -2,6 +2,7 @@
 
 import UIKit
 import CoreData
+import Foundation
 
 class PlayersViewController:  UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -72,10 +73,12 @@ class PlayersViewController:  UIViewController, UITableViewDataSource, UITableVi
         let player = NSManagedObject(entity: entity!,
             insertIntoManagedObjectContext: managedContext)
         
+        
         player.setValue(name, forKey: "name")
         player.setValue("", forKey: "picture")
         player.setValue(0, forKey: "score")
-        player.setValue(false, forKey: "selected")
+        player.setValue(0, forKey: "selected")
+        player.setValue(Int(round(Double(NSDate().timeIntervalSince1970.description)!)), forKey: "id")
         
         
         do {
@@ -100,7 +103,7 @@ class PlayersViewController:  UIViewController, UITableViewDataSource, UITableVi
         
         do {
             let results: NSArray = try (managedContext?.executeFetchRequest(request))!
-            return (results)
+            return results
         }
         catch let error as NSError {
             print(error)
@@ -123,11 +126,12 @@ class PlayersViewController:  UIViewController, UITableViewDataSource, UITableVi
             let cell = tableView.dequeueReusableCellWithIdentifier("Cell")
             let player = savedUsers[indexPath.row]
             cell!.textLabel!.text = player.valueForKey("name") as? String
+            cell!.tag = player.valueForKey("id") as! Int
             let image : UIImage = UIImage(named: "defaultpic")!
             cell!.imageView!.image = image
             
             if let playerSelected = player.valueForKey("selected"){
-                if(playerSelected as! Bool){ selectCell(cell!) }
+                if(playerSelected as! Int != 0){ selectCell(cell!) }
                 else{ deselectCell(cell!)}
             }
             else{ deselectCell(cell!)}
@@ -137,22 +141,57 @@ class PlayersViewController:  UIViewController, UITableViewDataSource, UITableVi
 
     
     func selectCell(cell: UITableViewCell){
-        print("cell was set to selected at");
+        print(cell.tag)
         let imageName = "tick";
         let selectedImage: UIImageView = UIImageView(image: UIImage(named: imageName));
         cell.accessoryView = selectedImage;
     }
     
     func deselectCell(cell: UITableViewCell){
-        print("cell was NOT set to selected");
         let image: UIImageView = UIImageView();
         cell.accessoryView = image;
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
-        let cell = self.tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
-        cell.selected = true
+        let cell = self.tableView.cellForRowAtIndexPath(indexPath)
+
+        updateUserAsSelected(cell!.tag)
         self.tableView.reloadData()
+    }
+    
+    
+    func updateUserAsSelected(id: Int) {
+        let appDelegate =
+        UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        let managedContext = appDelegate.managedObjectContext
+        
+        let request = NSFetchRequest(entityName: "User")
+//        request.returnsObjectsAsFaults = false
+        request.predicate = NSPredicate(format: "id == %i", id)
+        
+        do {
+            if let results = try appDelegate.managedObjectContext!.executeFetchRequest(request) as? [NSManagedObject] {
+                if results.count != 0{
+                    let managedObject = results[0]
+                    managedObject.setValue(1, forKey: "selected")
+                    do {
+                        try managedContext!.save()
+                    }
+                    catch let error as NSError  {
+                        print("Could not save \(error), \(error.userInfo)")
+                    }
+                }
+            
+            }
+        
+        }
+        catch let error as NSError {
+            print(error)
+        }
+
+        
+        
     }
     
     

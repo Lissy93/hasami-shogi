@@ -27,6 +27,11 @@ class PlayersViewController:  UIViewController, UITableViewDataSource, UITableVi
         title = "Players"
         tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         savedUsers = loadUsers()
+        
+        if savedUsers.count < 2 {
+            savePlayer("Player 1", num: 1)
+            savePlayer("Player 2", num: 2)
+        }
     }
     
     
@@ -41,7 +46,7 @@ class PlayersViewController:  UIViewController, UITableViewDataSource, UITableVi
             handler: { (action:UIAlertAction) -> Void in
                 
                 let textField = alert.textFields!.first
-                self.saveName(textField!.text!)
+                self.savePlayer(textField!.text!, num: 0)
                 self.tableView.reloadData()
         })
         
@@ -62,7 +67,7 @@ class PlayersViewController:  UIViewController, UITableViewDataSource, UITableVi
     }
     
     
-    func saveName(name: String) {
+    func savePlayer(name: String, num: Int) {
         let appDelegate =
         UIApplication.sharedApplication().delegate as! AppDelegate
         
@@ -78,7 +83,7 @@ class PlayersViewController:  UIViewController, UITableViewDataSource, UITableVi
         player.setValue(name, forKey: "name")
         player.setValue("", forKey: "picture")
         player.setValue(0, forKey: "score")
-        player.setValue(0, forKey: "selected")
+        player.setValue(num, forKey: "selected")
         player.setValue(Int(round(Double(NSDate().timeIntervalSince1970.description)!)), forKey: "id")
         
         

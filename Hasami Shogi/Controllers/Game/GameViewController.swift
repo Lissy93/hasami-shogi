@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 import AVFoundation
 
 class GameViewController:
@@ -18,11 +19,12 @@ class GameViewController:
     let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
     
     let gameStatus = GameStatusController() // Contains methods for updating all status information
-
-    let gameLogic = GameLogic() // Contains all the logic for playing the game
     
     let defaults = NSUserDefaults.standardUserDefaults() // The user settings
-
+    
+    let gameLogic = GameLogic() // Contains all the logic for playing the game
+    
+    let um = UserManagement() // All user management type stuff
     
     override func shouldAutorotate() -> Bool {
         return false
@@ -180,13 +182,16 @@ class GameViewController:
     
     // Calls the restart game method when the restart button is pressed
     func buttonAction(sender:UIButton!){
+        um.loadUsers()
         gameStatus.restartGame(self)
+        gameStatus.updatePlayerStatusText()
     }
     
     // Updates the text field which indicates which players turn it is
     func updatePlayerTurnText(playerTurnText: UITextField){
         playerTurnText.text = gameLogic.getCurrentPlayer().playerName + "'s Turn"
     }
+
 
     
 }

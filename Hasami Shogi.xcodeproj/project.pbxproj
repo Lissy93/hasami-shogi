@@ -11,6 +11,7 @@
 		C021C4251BD3CBD400EB3B93 /* die.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C021C4231BD3CBD400EB3B93 /* die.mp3 */; settings = {ASSET_TAGS = (); }; };
 		C021C4261BD3CBD400EB3B93 /* restart.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C021C4241BD3CBD400EB3B93 /* restart.mp3 */; settings = {ASSET_TAGS = (); }; };
 		C021C4281BD3DF3900EB3B93 /* invalid.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C021C4271BD3DF3900EB3B93 /* invalid.mp3 */; settings = {ASSET_TAGS = (); }; };
+		C039360A1BDC05AC00A33405 /* UserManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03936091BDC05AC00A33405 /* UserManagement.swift */; settings = {ASSET_TAGS = (); }; };
 		C04637CC1BC3A9430036D28A /* cell_marker.png in Resources */ = {isa = PBXBuildFile; fileRef = C04637CB1BC3A9430036D28A /* cell_marker.png */; settings = {ASSET_TAGS = (); }; };
 		C04E43741BC9061C00BCA93B /* GameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04E43731BC9061C00BCA93B /* GameCell.swift */; settings = {ASSET_TAGS = (); }; };
 		C0549C5A1BD5680200AE381F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0549C591BD5680200AE381F /* SettingsViewController.swift */; settings = {ASSET_TAGS = (); }; };
@@ -60,6 +61,7 @@
 		C021C4231BD3CBD400EB3B93 /* die.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = die.mp3; path = "Hasami Shogi/Assets/sounds/die.mp3"; sourceTree = "<group>"; };
 		C021C4241BD3CBD400EB3B93 /* restart.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = restart.mp3; path = "Hasami Shogi/Assets/sounds/restart.mp3"; sourceTree = "<group>"; };
 		C021C4271BD3DF3900EB3B93 /* invalid.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = invalid.mp3; path = "Hasami Shogi/Assets/sounds/invalid.mp3"; sourceTree = "<group>"; };
+		C03936091BDC05AC00A33405 /* UserManagement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserManagement.swift; path = Controllers/Players/UserManagement.swift; sourceTree = "<group>"; };
 		C04637CB1BC3A9430036D28A /* cell_marker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cell_marker.png; path = "Hasami Shogi/Assets/cell_marker.png"; sourceTree = "<group>"; };
 		C04E43731BC9061C00BCA93B /* GameCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameCell.swift; path = Models/GameCell.swift; sourceTree = "<group>"; };
 		C0549C591BD5680200AE381F /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = Controllers/Settings/SettingsViewController.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 				C06C7CD71BC1C9D80043E18F /* Game */,
 				C0549C591BD5680200AE381F /* SettingsViewController.swift */,
 				C06378A81BD8CCE60051CD7C /* PlayersViewController.swift */,
+				C03936091BDC05AC00A33405 /* UserManagement.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -382,6 +385,7 @@
 				C0C5F8B81BDA54A10069E07B /* User.swift in Sources */,
 				C06378A91BD8CCE60051CD7C /* PlayersViewController.swift in Sources */,
 				C06C7CD61BC1C2BB0043E18F /* GameLogicController.swift in Sources */,
+				C039360A1BDC05AC00A33405 /* UserManagement.swift in Sources */,
 				C0C5F8B71BDA54A10069E07B /* User+CoreDataProperties.swift in Sources */,
 				C0EC8F981BB6CACE0077BAF9 /* GameViewController.swift in Sources */,
 				C0549C5A1BD5680200AE381F /* SettingsViewController.swift in Sources */,

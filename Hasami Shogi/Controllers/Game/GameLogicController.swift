@@ -7,19 +7,31 @@
 //
 
 import UIKit
+import CoreData
 import AVFoundation
 
 
 class GameLogic {
     
-    var player1 = Player(playerNum: PlayerNum.player1, playerName: "Alicia", moves: 0, playerTurn: true)
-    var player2 = Player(playerNum: PlayerNum.player2, playerName: "LIZZARD", moves: 0, playerTurn: false)
+    var player1 = Player(playerNum: PlayerNum.player1, playerName: "Player 1", id: 0, playerTurn: true )
+    var player2 = Player(playerNum: PlayerNum.player2, playerName: "Player 2", id: 0, playerTurn: false)
     
     let blackChecker = "black_checker.png"
     let whiteChecker = "white_checker.png"
     
+    let um = UserManagement()
+    
     let defaults = NSUserDefaults.standardUserDefaults()
-
+    
+    init(){
+        resetPlayers()
+    }
+    
+    func resetPlayers(){
+        player1 = um.getPlayers(.player1)
+        player2 = um.getPlayers(.player2)
+    }
+    
     
     // Finds a list of cell cordinates where the user can valid move to
     func findPossibleMoves(cellCordinates: CellCordinates, collectionView: UICollectionView) -> [CellCordinates] {
@@ -182,7 +194,7 @@ class GameLogic {
     
     // Returns the player number for whoever's turn it is
     func getCurrentPlayer() -> Player{
-        return (player1.playerTurn) ? player1 : player2 ;
+        return (player1.playerTurn) ? um.getPlayers(.player1) : um.getPlayers(.player2) ;
     }
     
     

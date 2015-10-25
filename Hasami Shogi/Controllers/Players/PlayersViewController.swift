@@ -89,6 +89,8 @@ class PlayersViewController:  UIViewController, UITableViewDataSource, UITableVi
             let image : UIImage = UIImage(named: "defaultpic")!
             cell!.imageView!.image = image
             
+            cell?.textLabel!.font = UIFont (name: "HelveticaNeue-UltraLight", size: 20)
+            
             if let playerSelected = player.valueForKey("selected"){
                 let truePlayerSelected = playerSelected as! Int
                 if(truePlayerSelected != 0){ selectCell(cell!,

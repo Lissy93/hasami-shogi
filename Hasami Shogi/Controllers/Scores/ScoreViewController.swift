@@ -25,11 +25,12 @@ class ScoresViewController:  UIViewController, UITableViewDataSource, UITableVie
         title = "High Scores"
         tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         savedUsers = um.loadUsers()
+        
+        tableView.separatorStyle = UITableViewCellSeparatorStyle.None
     }
     
     override func viewDidAppear(animated: Bool) {
         savedUsers = um.loadUsers(NSSortDescriptor(key: "score", ascending: false))
-        
         self.tableView.reloadData()
     }
     
@@ -58,6 +59,11 @@ class ScoresViewController:  UIViewController, UITableViewDataSource, UITableVie
             
             cell?.accessoryType = .DetailButton
             cell!.accessoryView = txtScore
+            
+            cell?.textLabel!.font = UIFont (name: "HelveticaNeue-UltraLight", size: 20)
+            txtScore.font = UIFont (name: "HelveticaNeue-UltraLight", size: 15)
+
+
             
 //            let image : UIImage = UIImage(named: "defaultpic")!
 //            cell!.imageView!.image = image

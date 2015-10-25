@@ -28,7 +28,8 @@ class ScoresViewController:  UIViewController, UITableViewDataSource, UITableVie
     }
     
     override func viewDidAppear(animated: Bool) {
-        savedUsers = um.loadUsers()
+        savedUsers = um.loadUsers(NSSortDescriptor(key: "score", ascending: false))
+        
         self.tableView.reloadData()
     }
     

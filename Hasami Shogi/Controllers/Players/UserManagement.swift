@@ -76,6 +76,11 @@ class UserManagement{
     
     // Loads all users from the database
     func loadUsers() -> NSArray{
+        return loadUsers(NSSortDescriptor(key: "name", ascending: true))
+    }
+    
+    // Load sorted users from database
+    func loadUsers(sortDescriptor: NSSortDescriptor) -> NSArray{
         let appDelegate =
         UIApplication.sharedApplication().delegate as! AppDelegate
         
@@ -83,6 +88,8 @@ class UserManagement{
         
         let request = NSFetchRequest(entityName: "User")
         request.returnsObjectsAsFaults = false
+        
+        request.sortDescriptors = [sortDescriptor]
         
         do {
             let results: NSArray = try (managedContext?.executeFetchRequest(request))!
@@ -94,6 +101,7 @@ class UserManagement{
         
         return NSArray()
     }
+    
     
     
     // Updates a specific user

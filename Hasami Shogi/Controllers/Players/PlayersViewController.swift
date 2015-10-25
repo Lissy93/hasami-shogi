@@ -3,8 +3,19 @@
 import UIKit
 import CoreData
 import Foundation
+import AddressBook
+import AddressBookUI
 
-class PlayersViewController:  UIViewController, UITableViewDataSource, UITableViewDelegate {
+func delay(delay:Double, closure:()->()) {
+    dispatch_after(
+        dispatch_time(
+            DISPATCH_TIME_NOW,
+            Int64(delay * Double(NSEC_PER_SEC))
+        ),
+        dispatch_get_main_queue(), closure)
+}
+
+class PlayersViewController:  UIViewController, UITableViewDataSource, UITableViewDelegate, ABPeoplePickerNavigationControllerDelegate {
     
     // UI Elements
     @IBOutlet weak var tableView: UITableView!
@@ -15,12 +26,19 @@ class PlayersViewController:  UIViewController, UITableViewDataSource, UITableVi
     var savedUsers =  NSArray()
     var nextPlayer = 1
     
+    var adbk : ABAddressBook!
+    let picker = ABPeoplePickerNavigationController()
+
+    
     
     // User Management Operations
     let um = UserManagement()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        picker.peoplePickerDelegate = self
+        
         tableView.delegate = self
         tableView.dataSource = self;
         
@@ -35,38 +53,81 @@ class PlayersViewController:  UIViewController, UITableViewDataSource, UITableVi
     }
     
     
+    
+    func createAddressBook() -> Bool {
+        if self.adbk != nil {
+            return true
+        }
+        var err : Unmanaged<CFError>? = nil
+        let adbk : ABAddressBook? = ABAddressBookCreateWithOptions(nil, &err).takeRetainedValue()
+        if adbk == nil {
+            print(err)
+            self.adbk = nil
+            return false
+        }
+        self.adbk = adbk
+        return true
+    }
+    
+    
+    // Address book access
+    func determineStatus() -> Bool {
+        let status = ABAddressBookGetAuthorizationStatus()
+        switch status {
+        case .Authorized:
+            return self.createAddressBook()
+        case .NotDetermined:
+            var ok = false
+            ABAddressBookRequestAccessWithCompletion(nil) {
+                (granted:Bool, err:CFError!) in
+                dispatch_async(dispatch_get_main_queue()) {
+                    if granted {
+                        ok = self.createAddressBook()
+                    }
+                }
+            }
+            if ok == true {
+                return true
+            }
+            self.adbk = nil
+            return false
+        case .Restricted:
+            self.adbk = nil
+            return false
+        case .Denied:
+            // new iOS 8 feature: sane way of getting the user directly to the relevant prefs
+            let alert = UIAlertController(title: "Need Authorization", message: "Wouldn't you like to authorize Hasami Shogi to use your Contacts?", preferredStyle: .Alert)
+            alert.addAction(UIAlertAction(title: "No", style: .Cancel, handler: nil))
+            alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: {
+                _ in
+                let url = NSURL(string:UIApplicationOpenSettingsURLString)!
+                UIApplication.sharedApplication().openURL(url)
+            }))
+            self.presentViewController(alert, animated:true, completion:nil)
+            self.adbk = nil
+            return false
+        }
+    }
+    
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        self.determineStatus()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "determineStatus", name: UIApplicationWillEnterForegroundNotification, object: nil)
+    }
+
+    
     // When add new user button is pressed
     @IBAction func addButtonPressed(sender: UIBarButtonItem) {
-        
-        let alert = UIAlertController(title: "Add Player",
-            message: "Enter Player Name",
-            preferredStyle: .Alert)
-        
-        let saveAction = UIAlertAction(title: "Save",
-            style: .Default,
-            handler: { (action:UIAlertAction) -> Void in
-                
-                let textField = alert.textFields!.first
+        self.presentViewController(picker, animated:true, completion:nil)
+    }
+
     
-                self.players.append(self.um.savePlayer(textField!.text!, num: 0))
-                self.savedUsers = self.um.loadUsers()
-                self.tableView.reloadData()
-        })
-        
-        let cancelAction = UIAlertAction(title: "Cancel",
-            style: .Default) { (action: UIAlertAction) -> Void in
-        }
-        
-        alert.addTextFieldWithConfigurationHandler {
-            (textField: UITextField) -> Void in
-        }
-        
-        alert.addAction(saveAction)
-        alert.addAction(cancelAction)
-        
-        presentViewController(alert,
-            animated: true,
-            completion: nil)
+    func peoplePickerNavigationController(peoplePicker: ABPeoplePickerNavigationController, didSelectPerson person: ABRecord) {
+        let firstName = (ABRecordCopyValue(person, kABPersonFirstNameProperty).takeRetainedValue() as? String)
+        self.players.append(self.um.savePlayer(firstName!, num: 0))
+        self.savedUsers = self.um.loadUsers()
+        self.tableView.reloadData()
     }
 
     
@@ -153,10 +214,8 @@ class PlayersViewController:  UIViewController, UITableViewDataSource, UITableVi
     }
 
     
-    
-    
-}
 
+}
 
 
 

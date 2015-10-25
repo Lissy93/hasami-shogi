@@ -26,6 +26,8 @@ class GameViewController:
     
     let um = UserManagement() // All user management type stuff
     
+    let scoreLogic = ScoreLogic()
+    
     override func shouldAutorotate() -> Bool {
         return false
     }
@@ -109,6 +111,8 @@ class GameViewController:
                         if winStatus != .empty{
                             gameStatus.gameWon(winStatus, gvc: self)
                             gameStatus.playSound(.victory)
+                            gameLogic.resetPlayers()
+                            scoreLogic.incrementScore(gameLogic.getPlayerFromPlayerNum(winStatus).id)
                         }
                         
                         var fiveRowToWin = false
@@ -121,6 +125,8 @@ class GameViewController:
                             if fiveWinStatus != .empty{
                                 gameStatus.gameWon(fiveWinStatus, gvc: self)
                                 gameStatus.playSound(.victory)
+                                gameLogic.resetPlayers()
+                                scoreLogic.incrementScore(gameLogic.getPlayerFromPlayerNum(winStatus).id)
                             }
                         }
                         

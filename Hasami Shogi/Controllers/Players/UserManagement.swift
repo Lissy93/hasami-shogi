@@ -128,5 +128,27 @@ class UserManagement{
     }
     
     
+    // Fetches a specific user from the database
+    func getUser(userId: Int) -> NSArray{
+        let appDelegate =
+        UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        let managedContext = appDelegate.managedObjectContext
+        
+        let request = NSFetchRequest(entityName: "User")
+        request.predicate = NSPredicate(format: "id == %i", userId)
+        
+        do {
+            let results: NSArray = try (managedContext?.executeFetchRequest(request))!
+            return results
+        }
+        catch let error as NSError {
+            print(error)
+        }
+    
+        return NSArray()
+        
+    }
+    
 
 }

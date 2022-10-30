@@ -6,7 +6,7 @@
 
 <!-- Screenshot -->
 <p align="center" title="Screenshot of homepage">
-  <a href="lissy93.github.io/hasami-shogi">
+  <a href="https://lissy93.github.io/hasami-shogi">
     <img alt="Screenshot" src="https://i.ibb.co/FgHP2m7/hasami-shogi-screenshots.png" width="650" />
   </a>
 </p>
